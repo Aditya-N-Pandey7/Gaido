@@ -1,0 +1,686 @@
+[
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "January",
+    "month_num": 1,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 19,
+        "max": 32
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Cool sunny days, clear skies and calm seas ideal for beach tourism"
+    },
+    "crowd_analytics": {
+      "crowd_index": 95,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 88,
+      "peak_reasons_or_festivals": "Peak New Year hangover crowds and the height of winter tourist season"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1800,
+        "max": 3500
+      },
+      "midrange_stay_per_night": {
+        "min": 5000,
+        "max": 9000
+      },
+      "luxury_resort_per_night": {
+        "min": 12000,
+        "max": 25000
+      },
+      "avg_daily_meal_cost": 900,
+      "avg_local_commute_per_day": 1200
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Extremely crowded beaches and nightlife strips; book accommodation weeks in advance and watch belongings closely in tourist zones.",
+    "key_attractions_status": [
+      {
+        "name": "Baga Beach",
+        "status": "Open, very crowded",
+        "crowd": "High"
+      },
+      {
+        "name": "Fort Aguada",
+        "status": "Open, steady visitor flow",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in January experiences cool sunny days, clear skies and calm seas ideal for beach tourism with temperatures ranging between 19°C and 32°C. Tourism density is at its peak with a crowd index of 95/100 and average hotel occupancy of 88%. Peak New Year hangover crowds and the height of winter tourist season. Budget stays average ₹1800–₹3500 per night, mid-range hotels run ₹5000–₹9000, and luxury resorts ₹12000–₹25000, alongside daily meal costs near ₹900 and local commute of roughly ₹1200 per day. Baga Beach is open, very crowded with high crowd levels, while Fort Aguada remains open, steady visitor flow. Extremely crowded beaches and nightlife strips; book accommodation weeks in advance and watch belongings closely in tourist zones. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "February",
+    "month_num": 2,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 20,
+        "max": 33
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Warm, dry, festive atmosphere with Goa Carnival celebrations"
+    },
+    "crowd_analytics": {
+      "crowd_index": 88,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 80,
+      "peak_reasons_or_festivals": "Goa Carnival parades draw large crowds across the state"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1600,
+        "max": 3200
+      },
+      "midrange_stay_per_night": {
+        "min": 4500,
+        "max": 8000
+      },
+      "luxury_resort_per_night": {
+        "min": 10000,
+        "max": 22000
+      },
+      "avg_daily_meal_cost": 850,
+      "avg_local_commute_per_day": 1100
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Carnival crowds mean higher noise and traffic; sun exposure remains strong through midday.",
+    "key_attractions_status": [
+      {
+        "name": "Anjuna Flea Market",
+        "status": "Open, festive",
+        "crowd": "High"
+      },
+      {
+        "name": "Chapora Fort",
+        "status": "Open, moderate footfall",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in February experiences warm, dry, festive atmosphere with Goa Carnival celebrations with temperatures ranging between 20°C and 33°C. Tourism density is at its peak with a crowd index of 88/100 and average hotel occupancy of 80%. Goa Carnival parades draw large crowds across the state. Budget stays average ₹1600–₹3200 per night, mid-range hotels run ₹4500–₹8000, and luxury resorts ₹10000–₹22000, alongside daily meal costs near ₹850 and local commute of roughly ₹1100 per day. Anjuna Flea Market is open, festive with high crowd levels, while Chapora Fort remains open, moderate footfall. Carnival crowds mean higher noise and traffic; sun exposure remains strong through midday. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "March",
+    "month_num": 3,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 33
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Rising heat with dry, breezy coastal conditions and Shigmo festival colour"
+    },
+    "crowd_analytics": {
+      "crowd_index": 60,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 60,
+      "peak_reasons_or_festivals": "Shigmo spring festival and start of the shoulder season"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1200,
+        "max": 2200
+      },
+      "midrange_stay_per_night": {
+        "min": 3500,
+        "max": 6500
+      },
+      "luxury_resort_per_night": {
+        "min": 8000,
+        "max": 16000
+      },
+      "avg_daily_meal_cost": 700,
+      "avg_local_commute_per_day": 900
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Humidity begins climbing; beaches remain pleasant in early morning and evening hours.",
+    "key_attractions_status": [
+      {
+        "name": "Dudhsagar Falls",
+        "status": "Open, good flow",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Basilica of Bom Jesus",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in March experiences rising heat with dry, breezy coastal conditions and Shigmo festival colour with temperatures ranging between 23°C and 33°C. Tourism density is at a moderate, comfortable level with a crowd index of 60/100 and average hotel occupancy of 60%. Shigmo spring festival and start of the shoulder season. Budget stays average ₹1200–₹2200 per night, mid-range hotels run ₹3500–₹6500, and luxury resorts ₹8000–₹16000, alongside daily meal costs near ₹700 and local commute of roughly ₹900 per day. Dudhsagar Falls is open, good flow with moderate crowd levels, while Basilica of Bom Jesus remains open, comfortable crowds. Humidity begins climbing; beaches remain pleasant in early morning and evening hours. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "April",
+    "month_num": 4,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 26,
+        "max": 35
+      },
+      "rainfall_level": "Low (Dry, humid)",
+      "weather_summary": "Building pre-summer heat with high humidity and fewer tourists"
+    },
+    "crowd_analytics": {
+      "crowd_index": 42,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 45,
+      "peak_reasons_or_festivals": "Summer heat sets in, marking the start of the low season"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 900,
+        "max": 1800
+      },
+      "midrange_stay_per_night": {
+        "min": 2800,
+        "max": 5000
+      },
+      "luxury_resort_per_night": {
+        "min": 6500,
+        "max": 13000
+      },
+      "avg_daily_meal_cost": 650,
+      "avg_local_commute_per_day": 800
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Midday sun is intense; hydrate frequently and limit beach activity to mornings and evenings.",
+    "key_attractions_status": [
+      {
+        "name": "Palolem Beach",
+        "status": "Open, quieter",
+        "crowd": "Low"
+      },
+      {
+        "name": "Old Goa Churches",
+        "status": "Open, easy access",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in April experiences building pre-summer heat with high humidity and fewer tourists with temperatures ranging between 26°C and 35°C. Tourism density is at a moderate, comfortable level with a crowd index of 42/100 and average hotel occupancy of 45%. Summer heat sets in, marking the start of the low season. Budget stays average ₹900–₹1800 per night, mid-range hotels run ₹2800–₹5000, and luxury resorts ₹6500–₹13000, alongside daily meal costs near ₹650 and local commute of roughly ₹800 per day. Palolem Beach is open, quieter with low crowd levels, while Old Goa Churches remains open, easy access. Midday sun is intense; hydrate frequently and limit beach activity to mornings and evenings. This makes the period a balanced window suited to value-conscious travelers."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "May",
+    "month_num": 5,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 27,
+        "max": 34
+      },
+      "rainfall_level": "Moderate (Pre-monsoon showers)",
+      "weather_summary": "Humid with occasional pre-monsoon showers late in the month"
+    },
+    "crowd_analytics": {
+      "crowd_index": 28,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 35,
+      "peak_reasons_or_festivals": "Pre-monsoon lull brings steep off-season discounts"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 700,
+        "max": 1400
+      },
+      "midrange_stay_per_night": {
+        "min": 2200,
+        "max": 4200
+      },
+      "luxury_resort_per_night": {
+        "min": 5500,
+        "max": 11000
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Humidity and heat peak before the rains; carry light rain gear for sudden showers.",
+    "key_attractions_status": [
+      {
+        "name": "Chapora Fort",
+        "status": "Open, near-empty",
+        "crowd": "Low"
+      },
+      {
+        "name": "Anjuna Beach",
+        "status": "Open, shacks beginning to close",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in May experiences humid with occasional pre-monsoon showers late in the month with temperatures ranging between 27°C and 34°C. Tourism density is at a seasonal low with a crowd index of 28/100 and average hotel occupancy of 35%. Pre-monsoon lull brings steep off-season discounts. Budget stays average ₹700–₹1400 per night, mid-range hotels run ₹2200–₹4200, and luxury resorts ₹5500–₹11000, alongside daily meal costs near ₹600 and local commute of roughly ₹700 per day. Chapora Fort is open, near-empty with low crowd levels, while Anjuna Beach remains open, shacks beginning to close. Humidity and heat peak before the rains; carry light rain gear for sudden showers. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "June",
+    "month_num": 6,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 24,
+        "max": 31
+      },
+      "rainfall_level": "High (Monsoon onset)",
+      "weather_summary": "Monsoon onset with heavy showers and rough seas, Sao Joao festival"
+    },
+    "crowd_analytics": {
+      "crowd_index": 14,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 20,
+      "peak_reasons_or_festivals": "Monsoon arrives; most beach shacks shut for the season around Sao Joao festival"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 600,
+        "max": 1200
+      },
+      "midrange_stay_per_night": {
+        "min": 1800,
+        "max": 3500
+      },
+      "luxury_resort_per_night": {
+        "min": 4500,
+        "max": 9000
+      },
+      "avg_daily_meal_cost": 550,
+      "avg_local_commute_per_day": 650
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Low",
+      "budget_students": "Moderate",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Swimming is dangerous due to strong currents; heavy rainfall and lightning risk affect outdoor plans.",
+    "key_attractions_status": [
+      {
+        "name": "Dudhsagar Falls",
+        "status": "Closed for safety",
+        "crowd": "Low"
+      },
+      {
+        "name": "Fort Aguada",
+        "status": "Open, subdued footfall",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Goa in June experiences monsoon onset with heavy showers and rough seas, Sao Joao festival with temperatures ranging between 24°C and 31°C. Tourism density is at a seasonal low with a crowd index of 14/100 and average hotel occupancy of 20%. Monsoon arrives; most beach shacks shut for the season around Sao Joao festival. Budget stays average ₹600–₹1200 per night, mid-range hotels run ₹1800–₹3500, and luxury resorts ₹4500–₹9000, alongside daily meal costs near ₹550 and local commute of roughly ₹650 per day. Dudhsagar Falls is closed for safety with low crowd levels, while Fort Aguada remains open, subdued footfall. Swimming is dangerous due to strong currents; heavy rainfall and lightning risk affect outdoor plans. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "July",
+    "month_num": 7,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 29
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Peak monsoon with continuous heavy rainfall and lush green landscapes"
+    },
+    "crowd_analytics": {
+      "crowd_index": 10,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 18,
+      "peak_reasons_or_festivals": "Deepest monsoon month and the lowest tourist season of the year"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 550,
+        "max": 1100
+      },
+      "midrange_stay_per_night": {
+        "min": 1700,
+        "max": 3200
+      },
+      "luxury_resort_per_night": {
+        "min": 4200,
+        "max": 8500
+      },
+      "avg_daily_meal_cost": 550,
+      "avg_local_commute_per_day": 600
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Low",
+      "budget_students": "Moderate",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Heaviest rainfall of the year; most beaches prohibit swimming, so plan inland waterfall or heritage visits instead.",
+    "key_attractions_status": [
+      {
+        "name": "Dudhsagar Falls",
+        "status": "Closed",
+        "crowd": "Low"
+      },
+      {
+        "name": "Basilica of Bom Jesus",
+        "status": "Open, near-empty",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Goa in July experiences peak monsoon with continuous heavy rainfall and lush green landscapes with temperatures ranging between 23°C and 29°C. Tourism density is at a seasonal low with a crowd index of 10/100 and average hotel occupancy of 18%. Deepest monsoon month and the lowest tourist season of the year. Budget stays average ₹550–₹1100 per night, mid-range hotels run ₹1700–₹3200, and luxury resorts ₹4200–₹8500, alongside daily meal costs near ₹550 and local commute of roughly ₹600 per day. Dudhsagar Falls is closed with low crowd levels, while Basilica of Bom Jesus remains open, near-empty. Heaviest rainfall of the year; most beaches prohibit swimming, so plan inland waterfall or heritage visits instead. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "August",
+    "month_num": 8,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 29
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Continued monsoon rains with brief clear spells around local festivals"
+    },
+    "crowd_analytics": {
+      "crowd_index": 12,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 20,
+      "peak_reasons_or_festivals": "Monsoon continues alongside Feast of St. Mary celebrations"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 600,
+        "max": 1200
+      },
+      "midrange_stay_per_night": {
+        "min": 1800,
+        "max": 3400
+      },
+      "luxury_resort_per_night": {
+        "min": 4400,
+        "max": 9000
+      },
+      "avg_daily_meal_cost": 570,
+      "avg_local_commute_per_day": 650
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Low",
+      "budget_students": "Moderate",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Rains persist with occasional flooding on low-lying roads; keep travel plans flexible.",
+    "key_attractions_status": [
+      {
+        "name": "Fort Aguada",
+        "status": "Open, quiet",
+        "crowd": "Low"
+      },
+      {
+        "name": "Chapora Fort",
+        "status": "Open, near-empty",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Goa in August experiences continued monsoon rains with brief clear spells around local festivals with temperatures ranging between 23°C and 29°C. Tourism density is at a seasonal low with a crowd index of 12/100 and average hotel occupancy of 20%. Monsoon continues alongside Feast of St. Mary celebrations. Budget stays average ₹600–₹1200 per night, mid-range hotels run ₹1800–₹3400, and luxury resorts ₹4400–₹9000, alongside daily meal costs near ₹570 and local commute of roughly ₹650 per day. Fort Aguada is open, quiet with low crowd levels, while Chapora Fort remains open, near-empty. Rains persist with occasional flooding on low-lying roads; keep travel plans flexible. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "September",
+    "month_num": 9,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 30
+      },
+      "rainfall_level": "Moderate (Tapering monsoon)",
+      "weather_summary": "Monsoon tapering off with intermittent showers and rising greenery"
+    },
+    "crowd_analytics": {
+      "crowd_index": 25,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 30,
+      "peak_reasons_or_festivals": "Monsoon eases and Ganesh Chaturthi festivities bring local visitors"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 800,
+        "max": 1600
+      },
+      "midrange_stay_per_night": {
+        "min": 2200,
+        "max": 4000
+      },
+      "luxury_resort_per_night": {
+        "min": 5500,
+        "max": 11000
+      },
+      "avg_daily_meal_cost": 620,
+      "avg_local_commute_per_day": 750
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Seas remain choppy in early September; waterfalls are at their most dramatic this month.",
+    "key_attractions_status": [
+      {
+        "name": "Anjuna Beach",
+        "status": "Reopening, shacks rebuilding",
+        "crowd": "Low"
+      },
+      {
+        "name": "Dudhsagar Falls",
+        "status": "Open, strong flow",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in September experiences monsoon tapering off with intermittent showers and rising greenery with temperatures ranging between 23°C and 30°C. Tourism density is at a seasonal low with a crowd index of 25/100 and average hotel occupancy of 30%. Monsoon eases and Ganesh Chaturthi festivities bring local visitors. Budget stays average ₹800–₹1600 per night, mid-range hotels run ₹2200–₹4000, and luxury resorts ₹5500–₹11000, alongside daily meal costs near ₹620 and local commute of roughly ₹750 per day. Anjuna Beach is reopening, shacks rebuilding with low crowd levels, while Dudhsagar Falls remains open, strong flow. Seas remain choppy in early September; waterfalls are at their most dramatic this month. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "October",
+    "month_num": 10,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 31
+      },
+      "rainfall_level": "Low (Post-monsoon)",
+      "weather_summary": "Clearing skies and rebuilt beach shacks mark the return of tourist season"
+    },
+    "crowd_analytics": {
+      "crowd_index": 55,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 55,
+      "peak_reasons_or_festivals": "Shacks reopen and early Diwali travel demand begins building"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1000,
+        "max": 2000
+      },
+      "midrange_stay_per_night": {
+        "min": 3200,
+        "max": 6000
+      },
+      "luxury_resort_per_night": {
+        "min": 7500,
+        "max": 15000
+      },
+      "avg_daily_meal_cost": 750,
+      "avg_local_commute_per_day": 900
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Pleasant weather returns for sightseeing and water sports; book early as prices start rising.",
+    "key_attractions_status": [
+      {
+        "name": "Baga Beach",
+        "status": "Reopened, shacks rebuilt",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Fort Aguada",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in October experiences clearing skies and rebuilt beach shacks mark the return of tourist season with temperatures ranging between 23°C and 31°C. Tourism density is at a moderate, comfortable level with a crowd index of 55/100 and average hotel occupancy of 55%. Shacks reopen and early Diwali travel demand begins building. Budget stays average ₹1000–₹2000 per night, mid-range hotels run ₹3200–₹6000, and luxury resorts ₹7500–₹15000, alongside daily meal costs near ₹750 and local commute of roughly ₹900 per day. Baga Beach is reopened, shacks rebuilt with moderate crowd levels, while Fort Aguada remains open, comfortable crowds. Pleasant weather returns for sightseeing and water sports; book early as prices start rising. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "November",
+    "month_num": 11,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 21,
+        "max": 32
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Pleasant winter warmth with clear skies, marking the ramp-up to peak season"
+    },
+    "crowd_analytics": {
+      "crowd_index": 78,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 75,
+      "peak_reasons_or_festivals": "Peak season ramps up quickly with excellent weather across the state"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1500,
+        "max": 2800
+      },
+      "midrange_stay_per_night": {
+        "min": 4200,
+        "max": 7500
+      },
+      "luxury_resort_per_night": {
+        "min": 9500,
+        "max": 19000
+      },
+      "avg_daily_meal_cost": 850,
+      "avg_local_commute_per_day": 1050
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Crowds and prices rise fast; reserve stays and transport in advance for a smooth trip.",
+    "key_attractions_status": [
+      {
+        "name": "Baga Beach",
+        "status": "Open, busy",
+        "crowd": "High"
+      },
+      {
+        "name": "Anjuna Flea Market",
+        "status": "Open, lively",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Goa in November experiences pleasant winter warmth with clear skies, marking the ramp-up to peak season with temperatures ranging between 21°C and 32°C. Tourism density is at its peak with a crowd index of 78/100 and average hotel occupancy of 75%. Peak season ramps up quickly with excellent weather across the state. Budget stays average ₹1500–₹2800 per night, mid-range hotels run ₹4200–₹7500, and luxury resorts ₹9500–₹19000, alongside daily meal costs near ₹850 and local commute of roughly ₹1050 per day. Baga Beach is open, busy with high crowd levels, while Anjuna Flea Market remains open, lively. Crowds and prices rise fast; reserve stays and transport in advance for a smooth trip. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "goa",
+    "destination_name": "Goa",
+    "state": "Goa",
+    "month": "December",
+    "month_num": 12,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 19,
+        "max": 31
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Cool, dry, festive winter weather at the height of the tourist calendar"
+    },
+    "crowd_analytics": {
+      "crowd_index": 96,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 90,
+      "peak_reasons_or_festivals": "Christmas and New Year peak, the highest demand period of the year"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 2000,
+        "max": 4000
+      },
+      "midrange_stay_per_night": {
+        "min": 5500,
+        "max": 10000
+      },
+      "luxury_resort_per_night": {
+        "min": 13000,
+        "max": 28000
+      },
+      "avg_daily_meal_cost": 950,
+      "avg_local_commute_per_day": 1300
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Low",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Peak-season pricing and crowding are at their maximum; book flights and stays at least two months ahead.",
+    "key_attractions_status": [
+      {
+        "name": "Baga Beach",
+        "status": "Extremely crowded",
+        "crowd": "High"
+      },
+      {
+        "name": "Basilica of Bom Jesus",
+        "status": "Open, packed",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Goa in December experiences cool, dry, festive winter weather at the height of the tourist calendar with temperatures ranging between 19°C and 31°C. Tourism density is at its peak with a crowd index of 96/100 and average hotel occupancy of 90%. Christmas and New Year peak, the highest demand period of the year. Budget stays average ₹2000–₹4000 per night, mid-range hotels run ₹5500–₹10000, and luxury resorts ₹13000–₹28000, alongside daily meal costs near ₹950 and local commute of roughly ₹1300 per day. Baga Beach is extremely crowded with high crowd levels, while Basilica of Bom Jesus remains open, packed. Peak-season pricing and crowding are at their maximum; book flights and stays at least two months ahead. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  }
+]
