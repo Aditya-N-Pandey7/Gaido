@@ -141,9 +141,17 @@ Respond ONLY with valid, raw JSON matching this exact structure:
         crowd_val = parsed_data.get("crowd_index", 25)
         highlights = parsed_data.get("itinerary_highlights", ["Explore local heritage", "Experience local cuisine"])
 
+        parsed_data["crowd_density_score"] = crowd_val
         parsed_data["crowd_score"] = crowd_val
         parsed_data["estimated_cost"] = total_val
-        parsed_data["itinerary"] = highlights
+
+        itinerary_structured = []
+        for i, highlight in enumerate(highlights):
+            itinerary_structured.append({
+                "day": i + 1,
+                "activities": [highlight]
+            })
+        parsed_data["itinerary"] = itinerary_structured
 
         return parsed_data
 
@@ -154,6 +162,7 @@ Respond ONLY with valid, raw JSON matching this exact structure:
             "recommended_month": "May",
             "crowd_index": 22,
             "crowd_score": 22,
+            "crowd_density_score": 22,
             "summary": f"A balanced getaway to {req.destination or 'Goa'} during the shoulder season, featuring reduced crowds and competitive local tariffs.",
             "budget_breakdown": {
                 "stay": int((req.budget or 15000) * 0.45),
@@ -168,9 +177,18 @@ Respond ONLY with valid, raw JSON matching this exact structure:
                 "Enjoy low-density heritage and nature trails"
             ],
             "itinerary": [
-                f"Explore scenic viewpoints and key cultural landmarks in {req.destination or 'Goa'}",
-                "Discover local regional culinary hotspots away from commercial tourist strips",
-                "Enjoy low-density heritage and nature trails"
+                {
+                    "day": 1,
+                    "activities": [f"Explore scenic viewpoints and key cultural landmarks in {req.destination or 'Goa'}"]
+                },
+                {
+                    "day": 2,
+                    "activities": ["Discover local regional culinary hotspots away from commercial tourist strips"]
+                },
+                {
+                    "day": 3,
+                    "activities": ["Enjoy low-density heritage and nature trails"]
+                }
             ],
             "health_and_safety_advisory": "Carry hydration and review local transit schedules for off-peak timings."
         }
