@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useTripPlanner } from '../hooks/useTripPlanner';
-import { Compass, Sparkles, Loader2, AlertCircle, ShieldCheck } from 'lucide-react';
+import { DESTINATION_IMAGES, PlanTripRequest } from '../services/api';
+import { Compass, Sparkles, Loader2, AlertCircle, MapPin, IndianRupee, ShieldCheck } from 'lucide-react';
 
 export const PlannerScreen: React.FC = () => {
   const { data, loading, error, generatePlan } = useTripPlanner();
 
-  const [formState, setFormState] = useState({
-    query: 'Budget-friendly, quiet getaway with low crowd density and scenic nature',
+  const [formState, setFormState] = useState<PlanTripRequest>({
+    query: 'Quiet getaway with low crowd density and scenic nature',
     destination: 'Goa',
     max_crowd: 40,
     budget: 15000,
@@ -17,51 +18,60 @@ export const PlannerScreen: React.FC = () => {
     generatePlan(formState);
   };
 
+  const selectedMeta = DESTINATION_IMAGES[formState.destination] || DESTINATION_IMAGES['Goa'];
+  const activeResultMeta = data ? (DESTINATION_IMAGES[data.destination] || selectedMeta) : null;
+
   return (
-    <div className="max-w-2xl mx-auto p-4 space-y-6 text-slate-100">
-      {/* Search Header */}
-      <div className="space-y-1">
-        <h2 className="text-2xl font-bold flex items-center gap-2 text-white">
-          <Sparkles className="w-5 h-5 text-orange-400" />
-          AI Trip Generator
-        </h2>
-        <p className="text-xs text-slate-400">
-          Powered by local RAG backend & safety threat analysis engine.
+    <div className="max-w-4xl mx-auto space-y-8 text-slate-100">
+      <div className="text-center space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono">
+          <Sparkles className="w-3.5 h-3.5" /> GAIDO OLLAMA + CHROMADB BACKEND
+        </div>
+        <h1 className="text-4xl font-serif text-white">RAG Trip Generator</h1>
+        <p className="text-xs text-slate-400 max-w-md mx-auto">
+          Queries your local vector database (`ingest.py`) to generate authentic itineraries.
         </p>
       </div>
 
-      {/* Input Form */}
-      <form onSubmit={handleSubmit} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl">
+      {/* Form Input Container */}
+      <form onSubmit={handleSubmit} className="bg-[#12151e]/90 border border-slate-800 rounded-2xl p-6 space-y-5 shadow-2xl">
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">
-            Travel Intent / Preference
+          <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
+            Travel Preferences & Intent
           </label>
           <textarea
             rows={2}
             value={formState.query}
             onChange={(e) => setFormState({ ...formState, query: e.target.value })}
-            className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-orange-500 transition"
+            className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl p-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
             required
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">
-              Destination
+            <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
+              Destination (Backend Database)
             </label>
-            <input
-              type="text"
-              value={formState.destination}
-              onChange={(e) => setFormState({ ...formState, destination: e.target.value })}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-sm focus:outline-none focus:border-orange-500"
-              required
-            />
+            <div className="relative">
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-400" />
+              <select
+                value={formState.destination}
+                onChange={(e) => setFormState({ ...formState, destination: e.target.value })}
+                className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-9 pr-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500 appearance-none cursor-pointer"
+              >
+                {Object.keys(DESTINATION_IMAGES).map((dest) => (
+                  <option key={dest} value={dest} className="bg-slate-900 text-white">
+                    {dest}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">
-              Max Crowd % ({formState.max_crowd}%)
+            <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
+              Max Crowd Limit: {formState.max_crowd}%
             </label>
             <input
               type="range"
@@ -69,19 +79,19 @@ export const PlannerScreen: React.FC = () => {
               max="100"
               value={formState.max_crowd}
               onChange={(e) => setFormState({ ...formState, max_crowd: Number(e.target.value) })}
-              className="w-full accent-orange-500 mt-2"
+              className="w-full accent-amber-400 mt-2"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">
+            <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
               Max Budget (₹)
             </label>
             <input
               type="number"
               value={formState.budget}
               onChange={(e) => setFormState({ ...formState, budget: Number(e.target.value) })}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-sm focus:outline-none focus:border-orange-500"
+              className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 px-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500"
               required
             />
           </div>
@@ -90,55 +100,67 @@ export const PlannerScreen: React.FC = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-bold rounded-xl text-sm flex items-center justify-center gap-2 hover:opacity-90 disabled:opacity-50 transition shadow-lg shadow-orange-500/10"
+          className="w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-[0_0_20px_rgba(251,191,36,0.25)] active:scale-[0.99]"
         >
           {loading ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" /> Querying Local Ollama + ChromaDB...
+              <Loader2 className="w-4 h-4 animate-spin" /> Querying Local ChromaDB Vector Store...
             </>
           ) : (
             <>
-              <Compass className="w-4 h-4" /> Generate Privacy-First Plan
+              <Compass className="w-4 h-4" /> Generate Plan for {formState.destination}
             </>
           )}
         </button>
       </form>
 
-      {/* Error Alert */}
+      {/* Connection Error Message */}
       {error && (
-        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-start gap-3 text-red-400 text-xs">
-          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl flex items-start gap-3 text-rose-400 text-xs">
+          <AlertCircle className="w-5 h-5 shrink-0" />
           <div>
-            <strong className="font-semibold block">Connection Error</strong>
+            <strong className="font-semibold block">Backend Communication Error</strong>
             <span>{error}</span>
           </div>
         </div>
       )}
 
-      {/* Structured Output Render */}
-      {data && (
-        <div className="space-y-4">
-          <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-bold text-white">{data.destination}</h3>
-              <p className="text-xs text-slate-400">Estimated Cost: ₹{data.estimated_cost}</p>
+      {/* Backend Response View */}
+      {data && activeResultMeta && (
+        <div className="space-y-6">
+          <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-[#12151e] shadow-2xl">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{ backgroundImage: `url('${activeResultMeta.image}')` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-[#12151e] via-[#12151e]/40 to-transparent" />
             </div>
-            <div className="text-right">
-              <span className="text-xs px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 font-medium border border-emerald-500/30">
-                Crowd Density: {data.crowd_density_score}%
-              </span>
+
+            <div className="p-6 relative -mt-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <span className="px-3 py-1 rounded-md text-[10px] font-mono font-bold bg-amber-400 text-slate-950 uppercase">
+                  {activeResultMeta.category}
+                </span>
+                <h3 className="text-3xl font-serif text-white mt-2">{data.destination}</h3>
+                <p className="text-xs text-slate-400 mt-0.5">Estimated Cost: ₹{data.estimated_cost}</p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 font-mono border border-emerald-500/30 flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4" /> Crowd Score: {data.crowd_density_score}%
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Itinerary Items */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold uppercase text-slate-400 tracking-wider">
-              Generated Itinerary
+            <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400">
+              RAG Engine Generated Itinerary
             </h4>
             {data.itinerary?.map((item) => (
-              <div key={item.day} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                <span className="text-xs font-bold text-orange-400 uppercase">Day {item.day}</span>
-                <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
+              <div key={item.day} className="p-5 rounded-xl bg-[#12151e]/80 border border-slate-800 space-y-2">
+                <span className="text-xs font-bold font-mono text-amber-400 uppercase">Day {item.day}</span>
+                <ul className="list-disc list-inside text-xs text-slate-300 space-y-1.5 pl-1">
                   {item.activities.map((act, idx) => (
                     <li key={idx}>{act}</li>
                   ))}

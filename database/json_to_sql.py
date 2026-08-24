@@ -1,104 +1,62 @@
-import json
-import os
-import glob
+import json, glob, os
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "data")
+OUT  = os.path.join(HERE, "gaido_seed.sql")
 
-DATA_DIR = "data"
-OUTPUT_SQL = "database/gaido_seed.sql"
+def q(v):
+    if v is None or v == "": return "NULL"
+    if isinstance(v, (int, float)): return str(v)
+    return "'" + str(v).replace("'", "''") + "'"
 
-os.makedirs("database", exist_ok=True)
+def dig(d, *keys):
+    for k in keys:
+        if not isinstance(d, dict): return None
+        d = d.get(k)
+    return d
 
-sql_statements = []
+dests, months, attrs = {}, [], []
+for path in sorted(glob.glob(os.path.join(DATA, "*.json"))):
+    recs = json.load(open(path, encoding="utf-8"))
+    if isinstance(recs, dict): recs = [recs]
+    for r in recs:
+        did = r["destination_id"]
+        dests[did] = (did, r.get("destination_name"), r.get("state"))
+        months.append((did, r.get("month"), r.get("month_num"),
+            dig(r,"climate","avg_temp_celsius","min"), dig(r,"climate","avg_temp_celsius","max"),
+            dig(r,"climate","rainfall_level"), dig(r,"climate","weather_summary"),
+            dig(r,"crowd_analytics","crowd_index"), dig(r,"crowd_analytics","crowd_tier"),
+            dig(r,"crowd_analytics","historical_occupancy_rate_percent"),
+            dig(r,"crowd_analytics","peak_reasons_or_festivals"),
+            dig(r,"budget_benchmarks_inr","budget_stay_per_night","min"),
+            dig(r,"budget_benchmarks_inr","budget_stay_per_night","max"),
+            dig(r,"budget_benchmarks_inr","midrange_stay_per_night","min"),
+            dig(r,"budget_benchmarks_inr","midrange_stay_per_night","max"),
+            dig(r,"budget_benchmarks_inr","luxury_resort_per_night","min"),
+            dig(r,"budget_benchmarks_inr","luxury_resort_per_night","max"),
+            dig(r,"budget_benchmarks_inr","avg_daily_meal_cost"),
+            dig(r,"budget_benchmarks_inr","avg_local_commute_per_day"),
+            dig(r,"target_user_fit","solo_backpackers"), dig(r,"target_user_fit","budget_students"),
+            dig(r,"target_user_fit","families_with_kids"), dig(r,"target_user_fit","elderly_accessibility"),
+            r.get("health_and_safety_advisory"), r.get("rag_chunk_text")))
+        for a in r.get("key_attractions_status") or []:
+            attrs.append((did, r.get("month_num"), a.get("name"), a.get("status"), a.get("crowd")))
 
-# Standard SQLite Table Creation
-sql_statements.append("""
-DROP TABLE IF EXISTS destination_months;
-DROP TABLE IF EXISTS destinations;
-
-CREATE TABLE destinations (
-    destination_id TEXT PRIMARY KEY,
-    destination_name TEXT NOT NULL,
-    state TEXT,
-    tier_level INTEGER,
-    airport_code TEXT
-);
-
-CREATE TABLE destination_months (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    destination_id TEXT,
-    month TEXT,
-    month_num INTEGER,
-    min_temp INTEGER,
-    max_temp INTEGER,
-    crowd_index INTEGER,
-    crowd_level TEXT,
-    hotel_occupancy_pct INTEGER,
-    optimal_window_description TEXT,
-    min_budget_stay INTEGER,
-    max_budget_stay INTEGER,
-    avg_meal_cost INTEGER,
-    local_commute_cost INTEGER,
-    safety_advisory TEXT,
-    chunk_text TEXT,
-    FOREIGN KEY (destination_id) REFERENCES destinations (destination_id)
-);
-""")
-
-json_files = glob.glob(os.path.join(DATA_DIR, "*.json"))
-dest_count = 0
-month_count = 0
-
-for filepath in json_files:
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        
-    dest_name = data.get("destination_name", os.path.splitext(os.path.basename(filepath))[0].capitalize())
-    dest_id = dest_name.lower().replace(" ", "_")
-    state = data.get("state", "India")
-    
-    # Escape single quotes
-    dest_name_clean = dest_name.replace("'", "''")
-    state_clean = state.replace("'", "''")
-    
-    sql_statements.append(
-        f"INSERT INTO destinations (destination_id, destination_name, state) "
-        f"VALUES ('{dest_id}', '{dest_name_clean}', '{state_clean}');"
-    )
-    dest_count += 1
-    
-    # Process monthly records
-    monthly_data = data.get("months", data.get("monthly_data", []))
-    for m in monthly_data:
-        month = m.get("month", "Unknown")
-        month_num = int(m.get("month_num", 1))
-        min_temp = int(m.get("min_temp_c", m.get("min_temp", 20)))
-        max_temp = int(m.get("max_temp_c", m.get("max_temp", 30)))
-        crowd_index = int(m.get("crowd_index", 50))
-        crowd_level = str(m.get("crowd_level", "Moderate")).replace("'", "''")
-        occupancy = int(m.get("hotel_occupancy_pct", m.get("hotel_occupancy", 50)))
-        desc = str(m.get("optimal_window_description", m.get("description", ""))).replace("'", "''")
-        stay_min = int(m.get("min_budget_stay", 1200))
-        stay_max = int(m.get("max_budget_stay", 3500))
-        meal = int(m.get("avg_meal_cost", 500))
-        commute = int(m.get("local_commute_cost", 600))
-        safety = str(m.get("safety_advisory", "Standard precautions apply.")).replace("'", "''")
-        chunk = str(m.get("chunk_text", desc)).replace("'", "''")
-
-        sql_statements.append(
-            f"INSERT INTO destination_months ("
-            f"destination_id, month, month_num, min_temp, max_temp, crowd_index, "
-            f"crowd_level, hotel_occupancy_pct, optimal_window_description, "
-            f"min_budget_stay, max_budget_stay, avg_meal_cost, local_commute_cost, "
-            f"safety_advisory, chunk_text) VALUES ("
-            f"'{dest_id}', '{month}', {month_num}, {min_temp}, {max_temp}, {crowd_index}, "
-            f"'{crowd_level}', {occupancy}, '{desc}', {stay_min}, {stay_max}, {meal}, "
-            f"{commute}, '{safety}', '{chunk}');"
-        )
-        month_count += 1
-
-with open(OUTPUT_SQL, "w", encoding="utf-8") as f:
-    f.write("\n".join(sql_statements))
-
-print(f"Generated SQLite Seed Data:")
-print(f"Destinations:       {dest_count}")
-print(f"Destination-months: {month_count}")
-print(f"Written to:         {OUTPUT_SQL}")
+L = ["-- Gaido seed data", ""]
+L.append("insert into destinations (destination_id, destination_name, state) values")
+L.append(",\n".join("  (" + ", ".join(q(v) for v in r) + ")" for r in dests.values()) + ";")
+L.append("")
+cols = ("destination_id, month, month_num, temp_min_c, temp_max_c, rainfall_level, weather_summary, "
+        "crowd_index, crowd_tier, occupancy_rate_percent, peak_reasons, budget_stay_min, budget_stay_max, "
+        "midrange_stay_min, midrange_stay_max, luxury_stay_min, luxury_stay_max, avg_daily_meal_cost, "
+        "avg_local_commute_cost, fit_solo_backpackers, fit_budget_students, fit_families_with_kids, "
+        "fit_elderly, advisory, rag_chunk_text")
+L.append("insert into destination_months (" + cols + ") values")
+L.append(",\n".join("  (" + ", ".join(q(v) for v in r) + ")" for r in months) + ";")
+L.append("")
+L.append("insert into attraction_status (destination_id, month_num, attraction_name, status, crowd) values")
+L.append(",\n".join("  (" + ", ".join(q(v) for v in r) + ")" for r in attrs) + ";")
+open(OUT, "w", encoding="utf-8").write("\n".join(L))
+print("Destinations:       %d" % len(dests))
+print("Destination-months: %d" % len(months))
+print("Attractions:        %d" % len(attrs))
+print("Written to:", OUT)
