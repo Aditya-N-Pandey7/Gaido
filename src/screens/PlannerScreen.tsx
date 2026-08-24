@@ -24,17 +24,19 @@ export const PlannerScreen: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8 text-slate-100 relative">
       {/* Dynamic background photo of selected destination */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 transition-all duration-700">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 transition-all duration-700">
         <div 
-          className="w-full h-full bg-cover bg-center transition-all duration-1000 scale-105 opacity-20 filter blur-[1px]"
+          className="w-full h-full bg-cover bg-center transition-all duration-1000 scale-105 opacity-45 filter blur-[1px]"
           style={{ backgroundImage: `url('${selectedMeta.image}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d12] via-[#0b0d12]/95 to-[#0b0d12]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d12] via-[#0b0d12]/70 to-[#0b0d12]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d12]/80 via-transparent to-[#0b0d12]/70" />
       </div>
 
-      <div className="text-center space-y-2 relative z-10 pt-4">
-        <h1 className="text-5xl font-serif text-white">AI Trip Planner</h1>
-      </div>
+      <div className="relative z-10 space-y-8">
+        <div className="text-center space-y-2 pt-4">
+          <h1 className="text-5xl font-serif text-white">AI Trip Planner</h1>
+        </div>
 
       {/* Form Input Container */}
       <form onSubmit={handleSubmit} className="bg-[#12151e]/90 border border-slate-800 rounded-2xl p-6 space-y-5 shadow-2xl">
@@ -173,6 +175,7 @@ export const PlannerScreen: React.FC = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
