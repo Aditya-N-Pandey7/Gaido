@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTripPlanner } from '../hooks/useTripPlanner';
 import { DESTINATION_IMAGES, PlanTripRequest } from '../services/api';
-import { Compass, Sparkles, Loader2, AlertCircle, MapPin, IndianRupee, ShieldCheck } from 'lucide-react';
+import { Compass, Sparkles, Loader2, AlertCircle, MapPin, ShieldCheck } from 'lucide-react';
 
 export const PlannerScreen: React.FC = () => {
   const { data, loading, error, generatePlan } = useTripPlanner();

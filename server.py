@@ -1,16 +1,15 @@
 import json
+import os
+import sqlite3
 from typing import List, Optional
-import chromadb
-from chromadb.utils import embedding_functions
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import ollama
 from pydantic import BaseModel, Field
+import chromadb
+import requests
 
-# -------------------------------------------------------------
-# 1. APP & CORS SETUP
-# -------------------------------------------------------------
-app = FastAPI(title="Gaido AI Engine", version="1.0")
+# 1. FastAPI App Initialization & CORS Setup
+app = FastAPI(title="Gaido AI Travel Engine", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,167 +19,162 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -------------------------------------------------------------
-# 2. CHROMADB CONNECTION
-# -------------------------------------------------------------
-client = chromadb.PersistentClient(path="./gaido_chroma_db")
-emb_fn = embedding_functions.DefaultEmbeddingFunction()
-collection = client.get_collection(
-    name="gaido_destinations", embedding_function=emb_fn
-)
+# 2. ChromaDB Local Client Connection
+CHROMA_PATH = "gaido_chroma_db"
+chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
+try:
+    collection = chroma_client.get_collection(name="travel_destinations")
+except Exception:
+    collection = chroma_client.get_or_create_collection(name="travel_destinations")
 
-# -------------------------------------------------------------
-# 3. REQUEST & RESPONSE SCHEMAS
-# -------------------------------------------------------------
+# 3. Pydantic Models for Input & Output Validation
 class PlanRequest(BaseModel):
     query: str
     destination: Optional[str] = None
-    max_crowd: Optional[int] = None
-    budget: Optional[int] = 25000
+    max_crowd: Optional[int] = 50
+    budget: Optional[int] = 20000
 
 class BudgetBreakdown(BaseModel):
-    stay: int = Field(default=0)
-    food_and_local_travel: int = Field(default=0)
-    buffer: int = Field(default=0)
-    total: int = Field(default=0)
+    stay: int
+    food_and_local_travel: int
+    buffer: int
+    total: int
 
 class TravelPlanOutput(BaseModel):
     destination: str
     recommended_month: str
     crowd_index: int
+    crowd_score: Optional[int] = None
     summary: str
     budget_breakdown: BudgetBreakdown
+    estimated_cost: Optional[int] = None
     itinerary_highlights: List[str]
+    itinerary: Optional[List[str]] = None
     health_and_safety_advisory: str
 
-# -------------------------------------------------------------
-# 4. API ROUTE: /api/plan
-# -------------------------------------------------------------
-@app.post("/api/plan", response_model=TravelPlanOutput)
-async def generate_plan(req: PlanRequest):
+# 4. Local Ollama LLM Caller
+OLLAMA_API_URL = "http://localhost:11434/api/generate"
+MODEL_NAME = "llama3"
+
+def call_ollama(prompt: str) -> str:
     try:
-        # Step A: Build ChromaDB Filters
-        where_filters = []
-        if req.destination:
-            where_filters.append({"destination_name": {"$eq": req.destination}})
-        if req.max_crowd is not None:
-            where_filters.append({"crowd_index": {"$lte": req.max_crowd}})
-
-        where_clause = None
-        if len(where_filters) == 1:
-            where_clause = where_filters[0]
-        elif len(where_filters) > 1:
-            where_clause = {"$and": where_filters}
-
-        # Step B: Retrieve Top Context from ChromaDB
-        search_res = collection.query(
-            query_texts=[req.query],
-            n_results=3,
-            where=where_clause
+        response = requests.post(
+            OLLAMA_API_URL,
+            json={"model": MODEL_NAME, "prompt": prompt, "stream": False},
+            timeout=90
         )
+        if response.status_code == 200:
+            return response.json().get("response", "")
+        else:
+            raise RuntimeError(f"Ollama error: {response.text}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Local LLM connection failed: {str(e)}")
 
-        docs = search_res["documents"][0] if search_res["documents"] else []
-        metas = search_res["metadatas"][0] if search_res["metadatas"] else []
+# 5. Core RAG Planning Endpoint
+@app.post("/api/plan")
+async def generate_trip_plan(req: PlanRequest):
+    # Vector retrieval query
+    retrieval_query = f"{req.destination or ''} {req.query}".strip()
+    
+    where_clause = {}
+    if req.destination:
+        where_clause["destination"] = req.destination.capitalize()
 
-        if not docs:
-            raise HTTPException(
-                status_code=404,
-                detail="No destination matching your filter criteria was found."
-            )
+    results = collection.query(
+        query_texts=[retrieval_query],
+        n_results=4,
+        where=where_clause if where_clause else None
+    )
 
-        context_str = "\n\n".join([
-            f"[Destination: {m['destination_name']} | Month: {m['month']} | Crowd: {m['crowd_index']}/100]\n{d}"
-            for d, m in zip(docs, metas)
-        ])
+    retrieved_docs = results.get("documents", [[]])[0]
+    retrieved_context = "\n---\n".join(retrieved_docs) if retrieved_docs else "No historical data found."
 
-        # Step C: Formulate Strict Prompt
-        system_prompt = f"""You are Gaido, an on-premises AI travel planner for India.
-Use ONLY the context below to generate the travel plan. Do not hallucinate external pricing or details.
+    prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+You are Gaido, an intelligent, privacy-first travel engine.
+Generate an accurate, structured JSON itinerary grounded strictly on the retrieved context below.
 
 Context:
-{context_str}
+{retrieved_context}
 
-User Budget: INR ₹{req.budget}
-User Preferences: {req.query}
+User Constraint:
+- Destination: {req.destination or 'Optimal recommendation based on query'}
+- Query Intent: {req.query}
+- Max Acceptable Crowd Score: {req.max_crowd}/100
+- Maximum Budget: INR {req.budget}
 
-Respond strictly in valid JSON matching this structure:
+Respond ONLY with valid, raw JSON matching this exact structure:
 {{
-  "destination": "string",
-  "recommended_month": "string",
-  "crowd_index": 0,
-  "summary": "string",
+  "destination": "{req.destination or 'Destination Name'}",
+  "recommended_month": "Month Name",
+  "crowd_index": 25,
+  "summary": "Concise summary explaining why this destination and month fit the constraints.",
   "budget_breakdown": {{
-    "stay": 0,
-    "food_and_local_travel": 0,
-    "buffer": 0,
-    "total": 0
+    "stay": 6000,
+    "food_and_local_travel": 3500,
+    "buffer": 3000,
+    "total": 12500
   }},
-  "itinerary_highlights": ["Highlight 1", "Highlight 2"],
-  "health_and_safety_advisory": "string"
-}}"""
+  "itinerary_highlights": [
+    "Activity 1",
+    "Activity 2",
+    "Activity 3"
+  ],
+  "health_and_safety_advisory": "Specific safety and weather precaution note."
+}}
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+"""
 
-        # Step D: Execute Local Ollama LLM Inference
-        response = ollama.chat(
-            model="llama3",
-            messages=[{"role": "user", "content": system_prompt}],
-            options={"temperature": 0.2},
-            format="json"
-        )
+    raw_response = call_ollama(prompt)
+    
+    # Extract JSON safely
+    try:
+        json_start = raw_response.find("{")
+        json_end = raw_response.rfind("}") + 1
+        if json_start != -1 and json_end != -1:
+            clean_json = raw_response[json_start:json_end]
+            parsed_data = json.loads(clean_json)
+        else:
+            parsed_data = json.loads(raw_response)
 
-        # Step E: Schema Validation & Graceful Fallback
-        try:
-            parsed_json = json.loads(response['message']['content'])
-            validated_plan = TravelPlanOutput(**parsed_json)
-            return validated_plan.model_dump()
-        except Exception:
-            top_meta = metas[0]
-            stay_calc = int(top_meta.get("min_budget_stay", 1500)) * 3
-            travel_calc = int(top_meta.get("avg_meal_cost", 600)) * 3
-            return TravelPlanOutput(
-                destination=top_meta.get("destination_name", "Destination"),
-                recommended_month=top_meta.get("month", "Optimal Window"),
-                crowd_index=int(top_meta.get("crowd_index", 50)),
-                summary=docs[0][:250] + "...",
-                budget_breakdown=BudgetBreakdown(
-                    stay=stay_calc,
-                    food_and_local_travel=travel_calc,
-                    buffer=2000,
-                    total=stay_calc + travel_calc + 2000
-                ),
-                itinerary_highlights=[
-                    "Scenic local exploration",
-                    "Off-peak sightseeing activities"
-                ],
-                health_and_safety_advisory="Check local weather advisories before traveling."
-            ).model_dump()
+        # Standardize convenience aliases for frontend rendering
+        total_val = parsed_data.get("budget_breakdown", {}).get("total", req.budget or 15000)
+        crowd_val = parsed_data.get("crowd_index", 25)
+        highlights = parsed_data.get("itinerary_highlights", ["Explore local heritage", "Experience local cuisine"])
 
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        parsed_data["crowd_score"] = crowd_val
+        parsed_data["estimated_cost"] = total_val
+        parsed_data["itinerary"] = highlights
 
-# -------------------------------------------------------------
-# 5. ENTRYPOINT
-# -------------------------------------------------------------
-# ... (all your existing code, imports, schemas, and @app.post("/api/plan"))
+        return parsed_data
 
-# -------------------------------------------------------------
-# 5. HEALTH CHECK ROUTE (Add it here)
-# -------------------------------------------------------------
-@app.get("/api/health")
-async def health_check():
-    return {
-        "status": "healthy",
-        "chromadb_records": collection.count(),
-        "llm_engine": "Ollama / Llama3"
-    }
+    except Exception as parse_err:
+        # Fallback structured plan if JSON parsing encounters malformed formatting
+        return {
+            "destination": req.destination or "Goa",
+            "recommended_month": "May",
+            "crowd_index": 22,
+            "crowd_score": 22,
+            "summary": f"A balanced getaway to {req.destination or 'Goa'} during the shoulder season, featuring reduced crowds and competitive local tariffs.",
+            "budget_breakdown": {
+                "stay": int((req.budget or 15000) * 0.45),
+                "food_and_local_travel": int((req.budget or 15000) * 0.35),
+                "buffer": int((req.budget or 15000) * 0.20),
+                "total": req.budget or 15000
+            },
+            "estimated_cost": req.budget or 15000,
+            "itinerary_highlights": [
+                f"Explore scenic viewpoints and key cultural landmarks in {req.destination or 'Goa'}",
+                "Discover local regional culinary hotspots away from commercial tourist strips",
+                "Enjoy low-density heritage and nature trails"
+            ],
+            "itinerary": [
+                f"Explore scenic viewpoints and key cultural landmarks in {req.destination or 'Goa'}",
+                "Discover local regional culinary hotspots away from commercial tourist strips",
+                "Enjoy low-density heritage and nature trails"
+            ],
+            "health_and_safety_advisory": "Carry hydration and review local transit schedules for off-peak timings."
+        }
 
-# -------------------------------------------------------------
-# 6. ENTRYPOINT (Keep this at the very bottom)
-# -------------------------------------------------------------
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
