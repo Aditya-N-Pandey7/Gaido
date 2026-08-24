@@ -1,0 +1,686 @@
+[
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "January",
+    "month_num": 1,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 11,
+        "max": 25
+      },
+      "rainfall_level": "Low (Dry, cool)",
+      "weather_summary": "Crisp, cool mornings and clear skies ideal for sightseeing"
+    },
+    "crowd_analytics": {
+      "crowd_index": 92,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 88,
+      "peak_reasons_or_festivals": "Christmas and New Year holiday season drives the year's peak demand"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1200,
+        "max": 2400
+      },
+      "midrange_stay_per_night": {
+        "min": 3200,
+        "max": 6000
+      },
+      "luxury_resort_per_night": {
+        "min": 8000,
+        "max": 17000
+      },
+      "avg_daily_meal_cost": 650,
+      "avg_local_commute_per_day": 850
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Cool nights require warm layers; book stays well ahead given the holiday rush.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, clear trails",
+        "crowd": "High"
+      },
+      {
+        "name": "Tea Museum",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Munnar in January experiences crisp, cool mornings and clear skies ideal for sightseeing with temperatures ranging between 11°C and 25°C. Tourism density is at its peak with a crowd index of 92/100 and average hotel occupancy of 88%. Christmas and New Year holiday season drives the year's peak demand. Budget stays average ₹1200–₹2400 per night, mid-range hotels run ₹3200–₹6000, and luxury resorts ₹8000–₹17000, alongside daily meal costs near ₹650 and local commute of roughly ₹850 per day. Eravikulam National Park is open, clear trails with high crowd levels, while Tea Museum remains open, busy. Cool nights require warm layers; book stays well ahead given the holiday rush. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "February",
+    "month_num": 2,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 12,
+        "max": 27
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Pleasant, mild weather continuing from the winter peak"
+    },
+    "crowd_analytics": {
+      "crowd_index": 70,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 68,
+      "peak_reasons_or_festivals": "Tail end of the winter peak season with steady tourist inflow"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1000,
+        "max": 2000
+      },
+      "midrange_stay_per_night": {
+        "min": 2800,
+        "max": 5500
+      },
+      "luxury_resort_per_night": {
+        "min": 7200,
+        "max": 15000
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 800
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Weather remains ideal for trekking and sightseeing; mild sun protection still advisable at midday.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, good visibility",
+        "crowd": "High"
+      },
+      {
+        "name": "Mattupetty Dam",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in February experiences pleasant, mild weather continuing from the winter peak with temperatures ranging between 12°C and 27°C. Tourism density is at its peak with a crowd index of 70/100 and average hotel occupancy of 68%. Tail end of the winter peak season with steady tourist inflow. Budget stays average ₹1000–₹2000 per night, mid-range hotels run ₹2800–₹5500, and luxury resorts ₹7200–₹15000, alongside daily meal costs near ₹600 and local commute of roughly ₹800 per day. Eravikulam National Park is open, good visibility with high crowd levels, while Mattupetty Dam remains open, comfortable crowds. Weather remains ideal for trekking and sightseeing; mild sun protection still advisable at midday. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "March",
+    "month_num": 3,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 14,
+        "max": 29
+      },
+      "rainfall_level": "Low (Warming)",
+      "weather_summary": "Warming days with pleasant hill-station evenings"
+    },
+    "crowd_analytics": {
+      "crowd_index": 58,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 55,
+      "peak_reasons_or_festivals": "Shoulder season with steadily rising temperatures ahead of summer"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 900,
+        "max": 1800
+      },
+      "midrange_stay_per_night": {
+        "min": 2500,
+        "max": 4800
+      },
+      "luxury_resort_per_night": {
+        "min": 6500,
+        "max": 13000
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 750
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Daytime heat is rising even at altitude; early morning outings are most comfortable.",
+    "key_attractions_status": [
+      {
+        "name": "Tea Museum",
+        "status": "Open, moderate crowds",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Attukad Waterfalls",
+        "status": "Open, good flow",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in March experiences warming days with pleasant hill-station evenings with temperatures ranging between 14°C and 29°C. Tourism density is at a moderate, comfortable level with a crowd index of 58/100 and average hotel occupancy of 55%. Shoulder season with steadily rising temperatures ahead of summer. Budget stays average ₹900–₹1800 per night, mid-range hotels run ₹2500–₹4800, and luxury resorts ₹6500–₹13000, alongside daily meal costs near ₹600 and local commute of roughly ₹750 per day. Tea Museum is open, moderate crowds with moderate crowd levels, while Attukad Waterfalls remains open, good flow. Daytime heat is rising even at altitude; early morning outings are most comfortable. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "April",
+    "month_num": 4,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 28
+      },
+      "rainfall_level": "Low (Pleasant)",
+      "weather_summary": "Warm days with cool evenings, a popular pre-summer window"
+    },
+    "crowd_analytics": {
+      "crowd_index": 72,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 70,
+      "peak_reasons_or_festivals": "Summer vacation travel begins, boosting family visits"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1100,
+        "max": 2100
+      },
+      "midrange_stay_per_night": {
+        "min": 3000,
+        "max": 5800
+      },
+      "luxury_resort_per_night": {
+        "min": 7800,
+        "max": 16000
+      },
+      "avg_daily_meal_cost": 650,
+      "avg_local_commute_per_day": 850
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Popular viewpoints get crowded by midday; arrive early to beat the rush.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, busy",
+        "crowd": "High"
+      },
+      {
+        "name": "Mattupetty Dam",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Munnar in April experiences warm days with cool evenings, a popular pre-summer window with temperatures ranging between 15°C and 28°C. Tourism density is at its peak with a crowd index of 72/100 and average hotel occupancy of 70%. Summer vacation travel begins, boosting family visits. Budget stays average ₹1100–₹2100 per night, mid-range hotels run ₹3000–₹5800, and luxury resorts ₹7800–₹16000, alongside daily meal costs near ₹650 and local commute of roughly ₹850 per day. Eravikulam National Park is open, busy with high crowd levels, while Mattupetty Dam remains open, busy. Popular viewpoints get crowded by midday; arrive early to beat the rush. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "May",
+    "month_num": 5,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 26
+      },
+      "rainfall_level": "Low (Pleasant)",
+      "weather_summary": "Mild, comfortable hill-station weather at peak summer demand"
+    },
+    "crowd_analytics": {
+      "crowd_index": 75,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 72,
+      "peak_reasons_or_festivals": "Peak summer holiday season as families escape the plains' heat"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1200,
+        "max": 2300
+      },
+      "midrange_stay_per_night": {
+        "min": 3200,
+        "max": 6200
+      },
+      "luxury_resort_per_night": {
+        "min": 8200,
+        "max": 17000
+      },
+      "avg_daily_meal_cost": 680,
+      "avg_local_commute_per_day": 880
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Highest crowds of the pre-monsoon period; book accommodation and park entry tickets in advance.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, very busy",
+        "crowd": "High"
+      },
+      {
+        "name": "Tea Museum",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Munnar in May experiences mild, comfortable hill-station weather at peak summer demand with temperatures ranging between 15°C and 26°C. Tourism density is at its peak with a crowd index of 75/100 and average hotel occupancy of 72%. Peak summer holiday season as families escape the plains' heat. Budget stays average ₹1200–₹2300 per night, mid-range hotels run ₹3200–₹6200, and luxury resorts ₹8200–₹17000, alongside daily meal costs near ₹680 and local commute of roughly ₹880 per day. Eravikulam National Park is open, very busy with high crowd levels, while Tea Museum remains open, busy. Highest crowds of the pre-monsoon period; book accommodation and park entry tickets in advance. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "June",
+    "month_num": 6,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 23
+      },
+      "rainfall_level": "Moderate (Early monsoon)",
+      "weather_summary": "Early monsoon showers bring fresh mist over the tea gardens"
+    },
+    "crowd_analytics": {
+      "crowd_index": 38,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 42,
+      "peak_reasons_or_festivals": "Monsoon onset thins out crowds as the rains begin"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 850,
+        "max": 1700
+      },
+      "midrange_stay_per_night": {
+        "min": 2600,
+        "max": 5000
+      },
+      "luxury_resort_per_night": {
+        "min": 7000,
+        "max": 14500
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 750
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Trails can be slippery; carry rain protection and check park access before setting out.",
+    "key_attractions_status": [
+      {
+        "name": "Attukad Waterfalls",
+        "status": "Open, rising flow",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, subject to rain",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in June experiences early monsoon showers bring fresh mist over the tea gardens with temperatures ranging between 15°C and 23°C. Tourism density is at a seasonal low with a crowd index of 38/100 and average hotel occupancy of 42%. Monsoon onset thins out crowds as the rains begin. Budget stays average ₹850–₹1700 per night, mid-range hotels run ₹2600–₹5000, and luxury resorts ₹7000–₹14500, alongside daily meal costs near ₹600 and local commute of roughly ₹750 per day. Attukad Waterfalls is open, rising flow with moderate crowd levels, while Eravikulam National Park remains open, subject to rain. Trails can be slippery; carry rain protection and check park access before setting out. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "July",
+    "month_num": 7,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 16,
+        "max": 22
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Heavy monsoon showers, misty tea gardens, fresh waterfalls, occasional landslide warnings on ghat roads."
+    },
+    "crowd_analytics": {
+      "crowd_index": 35,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 42,
+      "peak_reasons_or_festivals": "Off-season quietude, Monsoon leisure travelers."
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 800,
+        "max": 1800
+      },
+      "midrange_stay_per_night": {
+        "min": 2500,
+        "max": 5000
+      },
+      "luxury_resort_per_night": {
+        "min": 7500,
+        "max": 16000
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 800
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "High slippery trail risks; elderly travelers should avoid trekking. Keep emergency rain gear and motion sickness meds for winding ghat roads.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open (subject to rain)",
+        "crowd": "Low"
+      },
+      {
+        "name": "Attukad Waterfalls",
+        "status": "Peak flow, high visual appeal",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Munnar in July experiences heavy monsoon showers, misty tea gardens, fresh waterfalls, occasional landslide warnings on ghat roads with temperatures ranging between 16°C and 22°C. Tourism density is at a seasonal low with a crowd index of 35/100 and average hotel occupancy of 42%. Off-season quietude, Monsoon leisure travelers. Budget stays average ₹800–₹1800 per night, mid-range hotels run ₹2500–₹5000, and luxury resorts ₹7500–₹16000, alongside daily meal costs near ₹600 and local commute of roughly ₹800 per day. Eravikulam National Park is open (subject to rain) with low crowd levels, while Attukad Waterfalls remains peak flow, high visual appeal. High slippery trail risks; elderly travelers should avoid trekking. Keep emergency rain gear and motion sickness meds for winding ghat roads. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "August",
+    "month_num": 8,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 23
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Continued heavy rainfall with lush, dramatic green landscapes"
+    },
+    "crowd_analytics": {
+      "crowd_index": 32,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 38,
+      "peak_reasons_or_festivals": "Deep monsoon season keeps crowds at their lowest"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 780,
+        "max": 1600
+      },
+      "midrange_stay_per_night": {
+        "min": 2400,
+        "max": 4800
+      },
+      "luxury_resort_per_night": {
+        "min": 7200,
+        "max": 15000
+      },
+      "avg_daily_meal_cost": 600,
+      "avg_local_commute_per_day": 780
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Landslide risk remains on ghat roads; avoid trekking during and immediately after heavy rain.",
+    "key_attractions_status": [
+      {
+        "name": "Attukad Waterfalls",
+        "status": "Open, peak flow",
+        "crowd": "Low"
+      },
+      {
+        "name": "Tea Museum",
+        "status": "Open, near-empty",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Munnar in August experiences continued heavy rainfall with lush, dramatic green landscapes with temperatures ranging between 15°C and 23°C. Tourism density is at a seasonal low with a crowd index of 32/100 and average hotel occupancy of 38%. Deep monsoon season keeps crowds at their lowest. Budget stays average ₹780–₹1600 per night, mid-range hotels run ₹2400–₹4800, and luxury resorts ₹7200–₹15000, alongside daily meal costs near ₹600 and local commute of roughly ₹780 per day. Attukad Waterfalls is open, peak flow with low crowd levels, while Tea Museum remains open, near-empty. Landslide risk remains on ghat roads; avoid trekking during and immediately after heavy rain. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "September",
+    "month_num": 9,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 24
+      },
+      "rainfall_level": "Moderate (Tapering monsoon)",
+      "weather_summary": "Rains ease with bursts of sunshine breaking through the clouds"
+    },
+    "crowd_analytics": {
+      "crowd_index": 45,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 48,
+      "peak_reasons_or_festivals": "Onam festival season brings a wave of domestic travelers"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 900,
+        "max": 1800
+      },
+      "midrange_stay_per_night": {
+        "min": 2700,
+        "max": 5200
+      },
+      "luxury_resort_per_night": {
+        "min": 7500,
+        "max": 15500
+      },
+      "avg_daily_meal_cost": 620,
+      "avg_local_commute_per_day": 800
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Onam festivities add local road traffic; plan travel days around festival dates for a smoother trip.",
+    "key_attractions_status": [
+      {
+        "name": "Mattupetty Dam",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Eravikulam National Park",
+        "status": "Reopening fully",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in September experiences rains ease with bursts of sunshine breaking through the clouds with temperatures ranging between 15°C and 24°C. Tourism density is at a moderate, comfortable level with a crowd index of 45/100 and average hotel occupancy of 48%. Onam festival season brings a wave of domestic travelers. Budget stays average ₹900–₹1800 per night, mid-range hotels run ₹2700–₹5200, and luxury resorts ₹7500–₹15500, alongside daily meal costs near ₹620 and local commute of roughly ₹800 per day. Mattupetty Dam is open, comfortable crowds with moderate crowd levels, while Eravikulam National Park remains reopening fully. Onam festivities add local road traffic; plan travel days around festival dates for a smoother trip. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "October",
+    "month_num": 10,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 15,
+        "max": 25
+      },
+      "rainfall_level": "Low (Post-monsoon)",
+      "weather_summary": "Clear post-monsoon skies with lush, green hillsides"
+    },
+    "crowd_analytics": {
+      "crowd_index": 62,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 60,
+      "peak_reasons_or_festivals": "Post-monsoon clarity draws trekkers and photographers back"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1000,
+        "max": 2000
+      },
+      "midrange_stay_per_night": {
+        "min": 2900,
+        "max": 5600
+      },
+      "luxury_resort_per_night": {
+        "min": 7800,
+        "max": 16000
+      },
+      "avg_daily_meal_cost": 640,
+      "avg_local_commute_per_day": 820
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Ideal trekking conditions return; still carry light rain gear for occasional showers.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, excellent visibility",
+        "crowd": "High"
+      },
+      {
+        "name": "Attukad Waterfalls",
+        "status": "Open, strong flow",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in October experiences clear post-monsoon skies with lush, green hillsides with temperatures ranging between 15°C and 25°C. Tourism density is at a moderate, comfortable level with a crowd index of 62/100 and average hotel occupancy of 60%. Post-monsoon clarity draws trekkers and photographers back. Budget stays average ₹1000–₹2000 per night, mid-range hotels run ₹2900–₹5600, and luxury resorts ₹7800–₹16000, alongside daily meal costs near ₹640 and local commute of roughly ₹820 per day. Eravikulam National Park is open, excellent visibility with high crowd levels, while Attukad Waterfalls remains open, strong flow. Ideal trekking conditions return; still carry light rain gear for occasional showers. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "November",
+    "month_num": 11,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 13,
+        "max": 24
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Cool, pleasant weather building toward the winter peak"
+    },
+    "crowd_analytics": {
+      "crowd_index": 68,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 65,
+      "peak_reasons_or_festivals": "Rising demand ahead of the Christmas and New Year season"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1100,
+        "max": 2100
+      },
+      "midrange_stay_per_night": {
+        "min": 3000,
+        "max": 5800
+      },
+      "luxury_resort_per_night": {
+        "min": 7800,
+        "max": 16000
+      },
+      "avg_daily_meal_cost": 650,
+      "avg_local_commute_per_day": 850
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Book accommodation early as prices begin climbing toward the December peak.",
+    "key_attractions_status": [
+      {
+        "name": "Tea Museum",
+        "status": "Open, busy",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Mattupetty Dam",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Munnar in November experiences cool, pleasant weather building toward the winter peak with temperatures ranging between 13°C and 24°C. Tourism density is at a moderate, comfortable level with a crowd index of 68/100 and average hotel occupancy of 65%. Rising demand ahead of the Christmas and New Year season. Budget stays average ₹1100–₹2100 per night, mid-range hotels run ₹3000–₹5800, and luxury resorts ₹7800–₹16000, alongside daily meal costs near ₹650 and local commute of roughly ₹850 per day. Tea Museum is open, busy with moderate crowd levels, while Mattupetty Dam remains open, comfortable crowds. Book accommodation early as prices begin climbing toward the December peak. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "munnar_kerala",
+    "destination_name": "Munnar",
+    "state": "Kerala",
+    "month": "December",
+    "month_num": 12,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 11,
+        "max": 23
+      },
+      "rainfall_level": "Low (Dry, cool)",
+      "weather_summary": "Cold, crisp evenings signal the start of the holiday peak season"
+    },
+    "crowd_analytics": {
+      "crowd_index": 88,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 85,
+      "peak_reasons_or_festivals": "Christmas and New Year holiday rush begins building rapidly"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 1200,
+        "max": 2400
+      },
+      "midrange_stay_per_night": {
+        "min": 3300,
+        "max": 6200
+      },
+      "luxury_resort_per_night": {
+        "min": 8200,
+        "max": 17500
+      },
+      "avg_daily_meal_cost": 680,
+      "avg_local_commute_per_day": 880
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "Moderate",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Book well ahead; roads and viewpoints get congested during the final week of December.",
+    "key_attractions_status": [
+      {
+        "name": "Eravikulam National Park",
+        "status": "Open, busy",
+        "crowd": "High"
+      },
+      {
+        "name": "Tea Museum",
+        "status": "Open, packed",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Munnar in December experiences cold, crisp evenings signal the start of the holiday peak season with temperatures ranging between 11°C and 23°C. Tourism density is at its peak with a crowd index of 88/100 and average hotel occupancy of 85%. Christmas and New Year holiday rush begins building rapidly. Budget stays average ₹1200–₹2400 per night, mid-range hotels run ₹3300–₹6200, and luxury resorts ₹8200–₹17500, alongside daily meal costs near ₹680 and local commute of roughly ₹880 per day. Eravikulam National Park is open, busy with high crowd levels, while Tea Museum remains open, packed. Book well ahead; roads and viewpoints get congested during the final week of December. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  }
+]
