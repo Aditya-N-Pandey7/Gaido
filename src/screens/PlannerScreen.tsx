@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTripPlanner } from '../hooks/useTripPlanner';
 import { DESTINATION_IMAGES, PlanTripRequest } from '../services/api';
-import { Compass, Sparkles, Loader2, AlertCircle, MapPin, ShieldCheck } from 'lucide-react';
+import { Compass, Loader2, AlertCircle, MapPin, ShieldCheck } from 'lucide-react';
 
 export const PlannerScreen: React.FC = () => {
   const { data, loading, error, generatePlan } = useTripPlanner();
@@ -22,15 +22,18 @@ export const PlannerScreen: React.FC = () => {
   const activeResultMeta = data ? (DESTINATION_IMAGES[data.destination] || selectedMeta) : null;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 text-slate-100">
-      <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono">
-          <Sparkles className="w-3.5 h-3.5" /> GAIDO OLLAMA + CHROMADB BACKEND
-        </div>
-        <h1 className="text-4xl font-serif text-white">RAG Trip Generator</h1>
-        <p className="text-xs text-slate-400 max-w-md mx-auto">
-          Queries your local vector database (`ingest.py`) to generate authentic itineraries.
-        </p>
+    <div className="max-w-4xl mx-auto space-y-8 text-slate-100 relative">
+      {/* Dynamic background photo of selected destination */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 transition-all duration-700">
+        <div 
+          className="w-full h-full bg-cover bg-center transition-all duration-1000 scale-105 opacity-20 filter blur-[1px]"
+          style={{ backgroundImage: `url('${selectedMeta.image}')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d12] via-[#0b0d12]/95 to-[#0b0d12]/75" />
+      </div>
+
+      <div className="text-center space-y-2 relative z-10 pt-4">
+        <h1 className="text-5xl font-serif text-white">AI Trip Planner</h1>
       </div>
 
       {/* Form Input Container */}

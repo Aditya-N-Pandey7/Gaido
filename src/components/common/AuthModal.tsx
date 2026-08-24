@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Shield, Eye, EyeOff, User, Mail, Lock, Key, ArrowRight, Info } from 'lucide-react';
+import { Shield, Eye, EyeOff, User, Mail, Lock, Key, ArrowRight, Info, X } from 'lucide-react';
+import gaidoLogo from '../../../Gaido_logo.jpeg';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -7,7 +8,7 @@ interface AuthModalProps {
   onLoginSuccess: () => void;
 }
 
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) => {
+export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }) => {
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [encryptionKey, setEncryptionKey] = useState('');
@@ -20,51 +21,71 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
-      <div className="w-full max-w-sm my-6 bg-slate-100 rounded-2xl shadow-2xl border border-slate-200 overflow-hidden text-slate-800 transition-all">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+      <div className="w-full max-w-md my-6 bg-[#0e1626]/90 border border-slate-800 rounded-3xl p-8 shadow-2xl relative space-y-6 text-slate-100 transition-all">
         
+        {/* Close Button */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-5 right-5 text-slate-400 hover:text-white transition"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
+
         {/* Header Logo */}
-        <div className="pt-6 pb-2 px-6 text-center bg-gradient-to-b from-slate-200/50 to-transparent">
+        <div className="text-center space-y-1">
           <div className="inline-flex items-center justify-center gap-2 mb-1">
-            <div className="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold shadow-sm">
-              <Shield className="w-4 h-4 fill-white text-orange-500" />
-            </div>
-            <span className="text-xl font-extrabold tracking-tight text-indigo-950">Gaido</span>
+            <img 
+              src={gaidoLogo} 
+              alt="Gaido Logo" 
+              className="h-10 w-auto bg-white/95 rounded-lg px-2.5 py-0.5 shadow-sm" 
+            />
           </div>
-          {mode === 'signin' && (
-            <p className="text-xs text-slate-500 font-medium mt-0.5">Intelligence through Privacy.</p>
-          )}
+          <p className="text-xs text-slate-400 font-mono tracking-widest uppercase">
+            {mode === 'signin' ? 'Sign In to Gaido' : 'Join Gaido'}
+          </p>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 pt-2">
+        <div className="space-y-4">
           {mode === 'signin' ? (
-            /* ================= IMAGE 1: LOGIN PAGE ================= */
+            /* ================= SIGN IN VIEW ================= */
             <div className="space-y-4">
-              <h2 className="text-xl font-bold text-center text-slate-900 mb-5">Welcome to Gaido</h2>
-
               <div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50 shadow-sm"
-                />
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">Email Address</label>
+                <div className="relative">
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
+                  />
+                </div>
               </div>
 
               <div>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50 shadow-sm"
-                />
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">Password</label>
+                <div className="relative">
+                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
+                  />
+                </div>
               </div>
 
-              <div className="flex items-center justify-between text-xs px-1 text-slate-500">
+              <div className="flex items-center justify-between text-[11px] px-1 text-slate-400">
                 <label className="flex items-center gap-2 cursor-pointer select-none">
-                  <input type="checkbox" className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
+                  <input 
+                    type="checkbox" 
+                    className="rounded border-slate-800 bg-[#0b0d12] text-amber-500 focus:ring-amber-500" 
+                  />
                   Remember me
                 </label>
-                <button type="button" className="text-indigo-900 font-bold hover:underline">
+                <button type="button" className="text-amber-400 font-semibold hover:underline">
                   Forgot password?
                 </button>
               </div>
@@ -72,7 +93,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
               <button
                 type="button"
                 onClick={onLoginSuccess}
-                className="w-full mt-2 py-3.5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 active:scale-[0.99] transition"
+                className="w-full mt-2 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 rounded-xl transition shadow-[0_0_20px_rgba(251,191,36,0.2)] active:scale-[0.99]"
               >
                 <span>EXPLORE NOW</span>
                 <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -80,78 +101,73 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
 
               <div className="relative my-4 text-center">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-slate-200" />
+                  <div className="w-full border-t border-slate-800/80" />
                 </div>
-                <span className="relative bg-slate-100 px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <span className="relative bg-[#0e1626] px-3 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
                   OR CONTINUE WITH
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <button type="button" className="flex items-center justify-center py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 font-bold text-slate-800 text-sm shadow-sm transition">
-                  G
+                <button type="button" className="flex items-center justify-center gap-2 py-2.5 bg-[#0b0d12] border border-slate-800 rounded-xl hover:border-slate-700 font-bold text-slate-200 text-xs shadow-sm transition">
+                  <span className="text-red-500 font-bold">G</span> Google
                 </button>
-                <button type="button" className="flex items-center justify-center py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 font-bold text-slate-800 text-sm shadow-sm transition">
-                  <span className="font-serif font-black">f</span>
+                <button type="button" className="flex items-center justify-center gap-2 py-2.5 bg-[#0b0d12] border border-slate-800 rounded-xl hover:border-slate-700 font-bold text-slate-200 text-xs shadow-sm transition">
+                  <span></span> Apple
                 </button>
               </div>
 
-              <p className="text-center text-xs text-slate-500 pt-3">
-                Don't have an account?{' '}
+              <p className="text-center text-xs text-slate-400 pt-3">
+                Don't have an account?
                 <button
                   type="button"
                   onClick={() => setMode('signup')}
-                  className="font-bold text-indigo-900 hover:underline"
+                  className="text-amber-400 font-bold hover:underline ml-1"
                 >
                   Sign up securely
                 </button>
               </p>
             </div>
           ) : (
-            /* ================= IMAGE 2: REGISTER PAGE ================= */
+            /* ================= SIGN UP VIEW ================= */
             <div className="space-y-3.5">
-              <div className="text-center mb-3">
-                <h2 className="text-xl font-bold text-indigo-950">Join Gaido</h2>
-                <p className="text-xs text-slate-500 mt-0.5">Create your privacy-first travel profile.</p>
-              </div>
-
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">Full Name</label>
                 <div className="relative">
-                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                   <input
                     type="text"
                     placeholder="Jane Doe"
-                    className="w-full bg-white border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">Email Address</label>
                 <div className="relative">
-                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                   <input
                     type="email"
                     placeholder="jane@example.com"
-                    className="w-full bg-white border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Password</label>
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">Password</label>
                 <div className="relative">
-                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder="••••••••"
-                    className="w-full bg-white border border-slate-200 rounded-xl py-2.5 pl-10 pr-10 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-10 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -160,30 +176,30 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
                 {/* Strength Bar */}
                 <div className="flex items-center gap-1.5 mt-2">
                   <div className="h-1 w-1/4 bg-emerald-500 rounded-full" />
-                  <div className="h-1 w-1/4 bg-slate-200 rounded-full" />
-                  <div className="h-1 w-1/4 bg-slate-200 rounded-full" />
-                  <span className="text-[10px] font-bold text-emerald-600 uppercase ml-auto">WEAK</span>
+                  <div className="h-1 w-1/4 bg-slate-800 rounded-full" />
+                  <div className="h-1 w-1/4 bg-slate-800 rounded-full" />
+                  <span className="text-[9px] font-bold text-emerald-500 uppercase ml-auto font-mono">WEAK</span>
                 </div>
               </div>
 
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="block text-xs font-bold text-slate-700">Encryption Key</label>
-                  <Info className="w-3.5 h-3.5 text-indigo-900 cursor-pointer" />
+                  <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Encryption Key</label>
+                  <Info className="w-3.5 h-3.5 text-slate-500 cursor-pointer hover:text-slate-300" />
                 </div>
                 <div className="relative flex items-center">
-                  <Key className="absolute left-3.5 w-4 h-4 text-slate-400" />
+                  <Key className="absolute left-3.5 w-4 h-4 text-slate-500" />
                   <input
                     type="text"
                     readOnly
                     value={encryptionKey}
-                    placeholder="Generate automatic key"
-                    className="w-full bg-white border border-slate-200 rounded-xl py-2.5 pl-10 pr-24 text-xs font-mono text-slate-700 placeholder-slate-400"
+                    placeholder="Generate secure key"
+                    className="w-full bg-[#0b0d12] border border-slate-800 rounded-xl py-2.5 pl-10 pr-24 text-[11px] font-mono text-slate-300 placeholder-slate-600 focus:outline-none"
                   />
                   <button
                     type="button"
                     onClick={handleGenerateKey}
-                    className="absolute right-1.5 px-3 py-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 text-[10px] font-bold uppercase rounded-lg transition"
+                    className="absolute right-1.5 px-3 py-1 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-[10px] font-bold uppercase rounded-lg transition"
                   >
                     GENERATE
                   </button>
@@ -193,7 +209,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
               <button
                 type="button"
                 onClick={onLoginSuccess}
-                className="w-full mt-2 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold rounded-xl text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 active:scale-[0.99] transition"
+                className="w-full mt-2 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 rounded-xl transition shadow-[0_0_20px_rgba(251,191,36,0.2)] active:scale-[0.99]"
               >
                 <span>CREATE SECURE ACCOUNT</span>
                 <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -201,37 +217,28 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
 
               <div className="relative my-2.5 text-center">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-slate-200" />
+                  <div className="w-full border-t border-slate-800/80" />
                 </div>
-                <span className="relative bg-slate-100 px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <span className="relative bg-[#0e1626] px-3 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
                   OR SIGN UP WITH
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <button type="button" className="flex items-center justify-center gap-2 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-700 shadow-sm hover:bg-slate-50">
+                <button type="button" className="flex items-center justify-center gap-2 py-2.5 bg-[#0b0d12] border border-slate-800 rounded-xl hover:border-slate-700 font-bold text-slate-200 text-xs shadow-sm transition">
                   <span className="text-red-500 font-bold">G</span> Google
                 </button>
-                <button type="button" className="flex items-center justify-center gap-2 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-700 shadow-sm hover:bg-slate-50">
+                <button type="button" className="flex items-center justify-center gap-2 py-2.5 bg-[#0b0d12] border border-slate-800 rounded-xl hover:border-slate-700 font-bold text-slate-200 text-xs shadow-sm transition">
                   <span></span> Apple
                 </button>
               </div>
 
-              {/* Privacy Badge Card */}
-              <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-start gap-2.5 text-left">
-                <Shield className="w-4 h-4 text-orange-600 mt-0.5 shrink-0" />
-                <div className="text-[11px]">
-                  <p className="font-bold text-orange-700">Privacy Verified by Gaido</p>
-                  <p className="text-amber-900/70 leading-tight">Government-grade telemetry encryption. Zero track logging.</p>
-                </div>
-              </div>
-
-              <p className="text-center text-xs text-slate-500 pt-1">
-                Already have an account?{' '}
+              <p className="text-center text-xs text-slate-400 pt-1">
+                Already have an account?
                 <button
                   type="button"
                   onClick={() => setMode('signin')}
-                  className="font-bold text-indigo-900 hover:underline"
+                  className="text-amber-400 font-bold hover:underline ml-1"
                 >
                   Sign in
                 </button>
@@ -239,14 +246,23 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
             </div>
           )}
 
+          {/* Privacy Badge Card */}
+          <div className="p-3.5 bg-amber-500/5 border border-amber-500/10 rounded-xl flex items-start gap-2.5 text-left">
+            <Shield className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+            <div className="text-[11px]">
+              <p className="font-bold text-amber-400">Privacy Verified by Gaido</p>
+              <p className="text-slate-400 leading-snug mt-0.5">Government-grade telemetry encryption. Zero track logging.</p>
+            </div>
+          </div>
+
           {/* Footer Legal Section */}
-          <div className="mt-5 pt-3 border-t border-slate-200 text-center space-y-1.5 text-[10px] text-slate-400">
-            <div className="flex justify-center gap-3 font-medium text-slate-500">
+          <div className="mt-5 pt-3 border-t border-slate-800/80 text-center space-y-1.5 text-[10px] text-slate-500">
+            <div className="flex justify-center gap-3 font-medium text-slate-400">
               <a href="#" className="hover:underline">Privacy Policy</a>
               <a href="#" className="hover:underline">Terms of Service</a>
               <a href="#" className="hover:underline">Security Whitepaper</a>
             </div>
-            <p className="text-[9px] uppercase tracking-wider font-semibold text-amber-900/60">
+            <p className="text-[9px] uppercase tracking-wider font-semibold text-amber-500/40">
               © 2026 GAIDO PRIVACY FIRST TRAVEL
             </p>
           </div>
@@ -255,3 +271,5 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onLoginSuccess }) 
     </div>
   );
 };
+
+export default AuthModal;

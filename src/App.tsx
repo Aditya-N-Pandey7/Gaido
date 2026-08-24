@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Heart, ArrowRight, Compass 
 } from 'lucide-react';
@@ -85,6 +85,8 @@ export const App: React.FC = () => {
   const [selectedDestinationIndex, setSelectedDestinationIndex] = useState(0);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
+  const [showSplash, setShowSplash] = useState(true);
+  const [splashProgress, setSplashProgress] = useState(0);
 
   const currentHero = BACKEND_DESTINATIONS[selectedDestinationIndex];
 
@@ -92,8 +94,72 @@ export const App: React.FC = () => {
     setFavorites(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
+  useEffect(() => {
+    let start = 0;
+    const end = 100;
+    const duration = 1800; // 1.8 seconds loading progress
+    const intervalTime = 30;
+    const totalSteps = duration / intervalTime;
+    const increment = end / totalSteps;
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        clearInterval(timer);
+        setSplashProgress(100);
+        setTimeout(() => {
+          setShowSplash(false);
+        }, 300);
+      } else {
+        setSplashProgress(Math.floor(start));
+      }
+    }, intervalTime);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0b0d12] text-slate-100 font-sans relative selection:bg-amber-500 selection:text-slate-950">
+      
+      {/* SPAZORLABS-like Animated Splash Screen overlay */}
+      {showSplash && (
+        <div className="fixed inset-0 z-50 bg-[#070b12] flex flex-col justify-between p-12 transition-opacity duration-500">
+          <div />
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <div className="relative w-24 h-24 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-[0_0_50px_rgba(251,191,36,0.15)] animate-pulse">
+              <img 
+                src={gaidoLogo} 
+                alt="Gaido Logo" 
+                className="w-16 h-16 object-contain rounded-full"
+              />
+            </div>
+          </div>
+          <div className="space-y-6 max-w-7xl mx-auto w-full">
+            <div className="text-[64px] font-extrabold font-mono tracking-tighter text-slate-100/90 leading-none select-none">
+              {splashProgress} <span className="text-amber-400">%</span>
+            </div>
+            <div className="w-full h-[1px] bg-slate-800 relative overflow-hidden">
+              <div 
+                className="absolute left-0 top-0 h-full bg-gradient-to-r from-amber-500 to-amber-300 transition-all duration-100 ease-out"
+                style={{ width: `${splashProgress}%` }}
+              />
+            </div>
+            <div className="flex justify-between items-baseline">
+              <div>
+                <span className="text-[28px] font-black tracking-tight text-white uppercase select-none flex items-center gap-1.5">
+                  GAI<span className="text-amber-400">DO</span>
+                </span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-slate-500 block font-mono">
+                  Your Own Travel App
+                </span>
+              </div>
+              <span className="text-[10px] font-mono tracking-widest text-slate-500 uppercase select-none hidden sm:inline">
+                Privacy-First Intel Engine
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
       
       {activeTab === 'explore' && (
         <div className="absolute top-0 inset-x-0 h-[85vh] overflow-hidden pointer-events-none z-0">
