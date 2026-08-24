@@ -124,10 +124,9 @@ Respond ONLY with valid, raw JSON matching this exact structure:
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>
 """
 
-    raw_response = call_ollama(prompt)
-    
     # Extract JSON safely
     try:
+        raw_response = call_ollama(prompt)
         json_start = raw_response.find("{")
         json_end = raw_response.rfind("}") + 1
         if json_start != -1 and json_end != -1:
