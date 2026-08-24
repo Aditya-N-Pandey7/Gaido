@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fetchTripPlan, PlanTripRequest, PlanTripResponse, DayItinerary } from '../services/api';
+import { fetchTripPlan, PlanTripRequest, PlanTripResponse, DayItinerary, BudgetBreakdown } from '../services/api';
 
 function sanitizeResponse(result: any, fallbackDestination: string, fallbackBudget: number): PlanTripResponse {
   const dest = result && typeof result.destination === 'string' && result.destination
@@ -59,11 +59,26 @@ function sanitizeResponse(result: any, fallbackDestination: string, fallbackBudg
     }));
   }
 
+  const rawBreakdown = result?.budget_breakdown;
+  const cleanBreakdown: BudgetBreakdown = {
+    stay: rawBreakdown && typeof rawBreakdown.stay === 'number'
+      ? rawBreakdown.stay
+      : Math.floor(cost * 0.45),
+    travelling: rawBreakdown && (typeof rawBreakdown.travelling === 'number' || typeof rawBreakdown.food_and_local_travel === 'number' || typeof rawBreakdown.travel === 'number')
+      ? (rawBreakdown.travelling || rawBreakdown.food_and_local_travel || rawBreakdown.travel)
+      : Math.floor(cost * 0.35),
+    emergency_fund: rawBreakdown && (typeof rawBreakdown.emergency_fund === 'number' || typeof rawBreakdown.buffer === 'number')
+      ? (rawBreakdown.emergency_fund || rawBreakdown.buffer)
+      : Math.floor(cost * 0.20),
+    total: cost
+  };
+
   return {
     destination: capitalizedDest,
     estimated_cost: cost,
     crowd_density_score: crowd,
-    itinerary: cleanItinerary
+    itinerary: cleanItinerary,
+    budget_breakdown: cleanBreakdown
   };
 }
 

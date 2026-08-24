@@ -109,7 +109,7 @@ export const PlannerScreen: React.FC = () => {
         >
           {loading ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" /> Querying Local ChromaDB Vector Store...
+              <Loader2 className="w-4 h-4 animate-spin" /> Generating...
             </>
           ) : (
             <>
@@ -147,7 +147,30 @@ export const PlannerScreen: React.FC = () => {
                   {activeResultMeta.category}
                 </span>
                 <h3 className="text-3xl font-serif text-white mt-2">{data.destination}</h3>
-                <p className="text-xs text-slate-400 mt-0.5">Estimated Cost: ₹{data.estimated_cost}</p>
+                {data.budget_breakdown && (
+                  <div className="mt-4 p-4 rounded-xl bg-slate-950/40 border border-slate-800/60 max-w-sm space-y-2.5">
+                    <div className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">
+                      Budget Breakdown
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-1.5 text-xs">
+                      <div className="text-slate-400">1. Stay:</div>
+                      <div className="text-right font-mono text-slate-200">₹{data.budget_breakdown.stay}</div>
+                      
+                      <div className="text-slate-400">2. Travelling:</div>
+                      <div className="text-right font-mono text-slate-200">₹{data.budget_breakdown.travelling}</div>
+                      
+                      <div className="text-slate-400">3. Emergency Fund:</div>
+                      <div className="text-right font-mono text-slate-200">₹{data.budget_breakdown.emergency_fund}</div>
+                      
+                      <div className="border-t border-slate-800/80 pt-1.5 mt-1 text-slate-300 font-bold">
+                        Total Estimated Budget:
+                      </div>
+                      <div className="border-t border-slate-800/80 pt-1.5 mt-1 text-right font-mono text-amber-400 font-bold">
+                        ₹{data.budget_breakdown.total}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="flex items-center gap-2">

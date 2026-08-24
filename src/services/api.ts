@@ -10,12 +10,20 @@ export interface DayItinerary {
   activities: string[];
 }
 
+export interface BudgetBreakdown {
+  stay: number;
+  travelling: number;
+  emergency_fund: number;
+  total: number;
+}
+
 export interface PlanTripResponse {
   destination: string;
   estimated_cost: number;
   crowd_density_score: number;
   itinerary: DayItinerary[];
   recommendations?: string[];
+  budget_breakdown?: BudgetBreakdown;
 }
 
 export interface DestinationMeta {
