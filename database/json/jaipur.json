@@ -1,0 +1,686 @@
+[
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "January",
+    "month_num": 1,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 8,
+        "max": 22
+      },
+      "rainfall_level": "Low (Dry, cool)",
+      "weather_summary": "Cold, crisp mornings with warm, sunny afternoons ideal for sightseeing"
+    },
+    "crowd_analytics": {
+      "crowd_index": 85,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 82,
+      "peak_reasons_or_festivals": "Jaipur Literature Festival and peak winter season drive the year's highest demand"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 700,
+        "max": 1400
+      },
+      "midrange_stay_per_night": {
+        "min": 2200,
+        "max": 4500
+      },
+      "luxury_resort_per_night": {
+        "min": 6500,
+        "max": 14000
+      },
+      "avg_daily_meal_cost": 500,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Cold mornings require light woollens; book major fort and palace tickets online to skip long queues.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, very crowded",
+        "crowd": "High"
+      },
+      {
+        "name": "Hawa Mahal",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in January experiences cold, crisp mornings with warm, sunny afternoons ideal for sightseeing with temperatures ranging between 8°C and 22°C. Tourism density is at its peak with a crowd index of 85/100 and average hotel occupancy of 82%. Jaipur Literature Festival and peak winter season drive the year's highest demand. Budget stays average ₹700–₹1400 per night, mid-range hotels run ₹2200–₹4500, and luxury resorts ₹6500–₹14000, alongside daily meal costs near ₹500 and local commute of roughly ₹700 per day. Amber Fort is open, very crowded with high crowd levels, while Hawa Mahal remains open, busy. Cold mornings require light woollens; book major fort and palace tickets online to skip long queues. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "February",
+    "month_num": 2,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 11,
+        "max": 26
+      },
+      "rainfall_level": "Low (Dry)",
+      "weather_summary": "Mild, pleasant winter weather easing toward spring warmth"
+    },
+    "crowd_analytics": {
+      "crowd_index": 78,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 75,
+      "peak_reasons_or_festivals": "Continued winter tourist season with comfortable sightseeing conditions"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 680,
+        "max": 1350
+      },
+      "midrange_stay_per_night": {
+        "min": 2100,
+        "max": 4300
+      },
+      "luxury_resort_per_night": {
+        "min": 6200,
+        "max": 13500
+      },
+      "avg_daily_meal_cost": 510,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Weather remains ideal for full-day heritage tours across the walled city.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, busy",
+        "crowd": "High"
+      },
+      {
+        "name": "City Palace",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in February experiences mild, pleasant winter weather easing toward spring warmth with temperatures ranging between 11°C and 26°C. Tourism density is at its peak with a crowd index of 78/100 and average hotel occupancy of 75%. Continued winter tourist season with comfortable sightseeing conditions. Budget stays average ₹680–₹1350 per night, mid-range hotels run ₹2100–₹4300, and luxury resorts ₹6200–₹13500, alongside daily meal costs near ₹510 and local commute of roughly ₹700 per day. Amber Fort is open, busy with high crowd levels, while City Palace remains open, comfortable crowds. Weather remains ideal for full-day heritage tours across the walled city. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "March",
+    "month_num": 3,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 17,
+        "max": 33
+      },
+      "rainfall_level": "Low (Warming)",
+      "weather_summary": "Rising heat with dry conditions around the Gangaur festival"
+    },
+    "crowd_analytics": {
+      "crowd_index": 60,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 58,
+      "peak_reasons_or_festivals": "Gangaur festival processions add colour and crowds to the old city"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 600,
+        "max": 1200
+      },
+      "midrange_stay_per_night": {
+        "min": 1900,
+        "max": 3900
+      },
+      "luxury_resort_per_night": {
+        "min": 5800,
+        "max": 12500
+      },
+      "avg_daily_meal_cost": 520,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Midday heat is rising quickly; plan fort and palace visits for morning or late afternoon.",
+    "key_attractions_status": [
+      {
+        "name": "City Palace",
+        "status": "Open, festival crowds",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Hawa Mahal",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in March experiences rising heat with dry conditions around the Gangaur festival with temperatures ranging between 17°C and 33°C. Tourism density is at a moderate, comfortable level with a crowd index of 60/100 and average hotel occupancy of 58%. Gangaur festival processions add colour and crowds to the old city. Budget stays average ₹600–₹1200 per night, mid-range hotels run ₹1900–₹3900, and luxury resorts ₹5800–₹12500, alongside daily meal costs near ₹520 and local commute of roughly ₹700 per day. City Palace is open, festival crowds with moderate crowd levels, while Hawa Mahal remains open, busy. Midday heat is rising quickly; plan fort and palace visits for morning or late afternoon. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "April",
+    "month_num": 4,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 23,
+        "max": 38
+      },
+      "rainfall_level": "Low (Hot, dry)",
+      "weather_summary": "Sharp early-summer heat with dry, dusty winds"
+    },
+    "crowd_analytics": {
+      "crowd_index": 32,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 35,
+      "peak_reasons_or_festivals": "Extreme heat sharply reduces tourist footfall across the city"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 450,
+        "max": 950
+      },
+      "midrange_stay_per_night": {
+        "min": 1600,
+        "max": 3300
+      },
+      "luxury_resort_per_night": {
+        "min": 5000,
+        "max": 10500
+      },
+      "avg_daily_meal_cost": 540,
+      "avg_local_commute_per_day": 720
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Daytime temperatures can exceed 38°C; carry water at all times and avoid midday outdoor activity.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, subdued footfall",
+        "crowd": "Low"
+      },
+      {
+        "name": "Jal Mahal",
+        "status": "Open, quiet",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in April experiences sharp early-summer heat with dry, dusty winds with temperatures ranging between 23°C and 38°C. Tourism density is at a seasonal low with a crowd index of 32/100 and average hotel occupancy of 35%. Extreme heat sharply reduces tourist footfall across the city. Budget stays average ₹450–₹950 per night, mid-range hotels run ₹1600–₹3300, and luxury resorts ₹5000–₹10500, alongside daily meal costs near ₹540 and local commute of roughly ₹720 per day. Amber Fort is open, subdued footfall with low crowd levels, while Jal Mahal remains open, quiet. Daytime temperatures can exceed 38°C; carry water at all times and avoid midday outdoor activity. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "May",
+    "month_num": 5,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 27,
+        "max": 41
+      },
+      "rainfall_level": "Low (Extreme heat)",
+      "weather_summary": "Peak summer heat with scorching, dry desert-edge conditions"
+    },
+    "crowd_analytics": {
+      "crowd_index": 20,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 25,
+      "peak_reasons_or_festivals": "Extreme heat makes this the quietest month of the year for tourism"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 400,
+        "max": 850
+      },
+      "midrange_stay_per_night": {
+        "min": 1450,
+        "max": 3100
+      },
+      "luxury_resort_per_night": {
+        "min": 4700,
+        "max": 10000
+      },
+      "avg_daily_meal_cost": 560,
+      "avg_local_commute_per_day": 750
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Low",
+      "budget_students": "Moderate",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Heatstroke risk is severe; limit sightseeing to early morning hours and stay indoors midday.",
+    "key_attractions_status": [
+      {
+        "name": "Jal Mahal",
+        "status": "Open, near-empty",
+        "crowd": "Low"
+      },
+      {
+        "name": "Nahargarh Fort",
+        "status": "Open, minimal footfall",
+        "crowd": "Low"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in May experiences peak summer heat with scorching, dry desert-edge conditions with temperatures ranging between 27°C and 41°C. Tourism density is at a seasonal low with a crowd index of 20/100 and average hotel occupancy of 25%. Extreme heat makes this the quietest month of the year for tourism. Budget stays average ₹400–₹850 per night, mid-range hotels run ₹1450–₹3100, and luxury resorts ₹4700–₹10000, alongside daily meal costs near ₹560 and local commute of roughly ₹750 per day. Jal Mahal is open, near-empty with low crowd levels, while Nahargarh Fort remains open, minimal footfall. Heatstroke risk is severe; limit sightseeing to early morning hours and stay indoors midday. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "June",
+    "month_num": 6,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 28,
+        "max": 39
+      },
+      "rainfall_level": "Moderate (Pre-monsoon)",
+      "weather_summary": "Building humidity with dust storms ahead of the monsoon"
+    },
+    "crowd_analytics": {
+      "crowd_index": 28,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 32,
+      "peak_reasons_or_festivals": "Heat persists with occasional pre-monsoon dust storms"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 420,
+        "max": 880
+      },
+      "midrange_stay_per_night": {
+        "min": 1500,
+        "max": 3150
+      },
+      "luxury_resort_per_night": {
+        "min": 4750,
+        "max": 10200
+      },
+      "avg_daily_meal_cost": 560,
+      "avg_local_commute_per_day": 740
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Low",
+      "budget_students": "Moderate",
+      "families_with_kids": "Low",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Dust storms can reduce visibility suddenly; check forecasts before hilltop fort visits.",
+    "key_attractions_status": [
+      {
+        "name": "Nahargarh Fort",
+        "status": "Open, quiet",
+        "crowd": "Low"
+      },
+      {
+        "name": "City Palace",
+        "status": "Open, shorter queues",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in June experiences building humidity with dust storms ahead of the monsoon with temperatures ranging between 28°C and 39°C. Tourism density is at a seasonal low with a crowd index of 28/100 and average hotel occupancy of 32%. Heat persists with occasional pre-monsoon dust storms. Budget stays average ₹420–₹880 per night, mid-range hotels run ₹1500–₹3150, and luxury resorts ₹4750–₹10200, alongside daily meal costs near ₹560 and local commute of roughly ₹740 per day. Nahargarh Fort is open, quiet with low crowd levels, while City Palace remains open, shorter queues. Dust storms can reduce visibility suddenly; check forecasts before hilltop fort visits. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "July",
+    "month_num": 7,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 26,
+        "max": 33
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Monsoon showers bring welcome relief from the summer heat"
+    },
+    "crowd_analytics": {
+      "crowd_index": 38,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 42,
+      "peak_reasons_or_festivals": "Monsoon onset improves comfort and gradually revives tourist interest"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 480,
+        "max": 980
+      },
+      "midrange_stay_per_night": {
+        "min": 1650,
+        "max": 3350
+      },
+      "luxury_resort_per_night": {
+        "min": 5100,
+        "max": 10800
+      },
+      "avg_daily_meal_cost": 530,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Hilltop forts offer dramatic monsoon views but paths can be slippery after rain.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, scenic in rain",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Nahargarh Fort",
+        "status": "Open, misty views",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in July experiences monsoon showers bring welcome relief from the summer heat with temperatures ranging between 26°C and 33°C. Tourism density is at a seasonal low with a crowd index of 38/100 and average hotel occupancy of 42%. Monsoon onset improves comfort and gradually revives tourist interest. Budget stays average ₹480–₹980 per night, mid-range hotels run ₹1650–₹3350, and luxury resorts ₹5100–₹10800, alongside daily meal costs near ₹530 and local commute of roughly ₹700 per day. Amber Fort is open, scenic in rain with moderate crowd levels, while Nahargarh Fort remains open, misty views. Hilltop forts offer dramatic monsoon views but paths can be slippery after rain. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "August",
+    "month_num": 8,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 25,
+        "max": 31
+      },
+      "rainfall_level": "High (Monsoon)",
+      "weather_summary": "Continued monsoon rain with humid, overcast skies"
+    },
+    "crowd_analytics": {
+      "crowd_index": 35,
+      "crowd_tier": "Low",
+      "historical_occupancy_rate_percent": 40,
+      "peak_reasons_or_festivals": "Monsoon continues, keeping crowds moderate but rising steadily"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 470,
+        "max": 970
+      },
+      "midrange_stay_per_night": {
+        "min": 1620,
+        "max": 3300
+      },
+      "luxury_resort_per_night": {
+        "min": 5000,
+        "max": 10600
+      },
+      "avg_daily_meal_cost": 530,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "Moderate",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Low"
+    },
+    "health_and_safety_advisory": "Rising lake levels make Jal Mahal especially photogenic; carry rain protection for outdoor stops.",
+    "key_attractions_status": [
+      {
+        "name": "City Palace",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Jal Mahal",
+        "status": "Open, lake levels high",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in August experiences continued monsoon rain with humid, overcast skies with temperatures ranging between 25°C and 31°C. Tourism density is at a seasonal low with a crowd index of 35/100 and average hotel occupancy of 40%. Monsoon continues, keeping crowds moderate but rising steadily. Budget stays average ₹470–₹970 per night, mid-range hotels run ₹1620–₹3300, and luxury resorts ₹5000–₹10600, alongside daily meal costs near ₹530 and local commute of roughly ₹700 per day. City Palace is open, comfortable crowds with moderate crowd levels, while Jal Mahal remains open, lake levels high. Rising lake levels make Jal Mahal especially photogenic; carry rain protection for outdoor stops. This makes the period ideal for budget-conscious solo travelers and couples seeking a quieter, discounted experience."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "September",
+    "month_num": 9,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 24,
+        "max": 32
+      },
+      "rainfall_level": "Moderate (Tapering monsoon)",
+      "weather_summary": "Rains easing with intermittent showers around Teej festival"
+    },
+    "crowd_analytics": {
+      "crowd_index": 48,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 50,
+      "peak_reasons_or_festivals": "Teej festival processions bring lively local crowds to the old city"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 550,
+        "max": 1100
+      },
+      "midrange_stay_per_night": {
+        "min": 1800,
+        "max": 3600
+      },
+      "luxury_resort_per_night": {
+        "min": 5400,
+        "max": 11500
+      },
+      "avg_daily_meal_cost": 550,
+      "avg_local_commute_per_day": 720
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "Moderate",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Teej celebrations add festive traffic; plan travel through the old city with extra time.",
+    "key_attractions_status": [
+      {
+        "name": "City Palace",
+        "status": "Open, festival crowds",
+        "crowd": "Moderate"
+      },
+      {
+        "name": "Hawa Mahal",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in September experiences rains easing with intermittent showers around Teej festival with temperatures ranging between 24°C and 32°C. Tourism density is at a moderate, comfortable level with a crowd index of 48/100 and average hotel occupancy of 50%. Teej festival processions bring lively local crowds to the old city. Budget stays average ₹550–₹1100 per night, mid-range hotels run ₹1800–₹3600, and luxury resorts ₹5400–₹11500, alongside daily meal costs near ₹550 and local commute of roughly ₹720 per day. City Palace is open, festival crowds with moderate crowd levels, while Hawa Mahal remains open, busy. Teej celebrations add festive traffic; plan travel through the old city with extra time. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "October",
+    "month_num": 10,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 19,
+        "max": 32
+      },
+      "rainfall_level": "Low (Post-monsoon)",
+      "weather_summary": "Clear, pleasant post-monsoon days with comfortable evenings"
+    },
+    "crowd_analytics": {
+      "crowd_index": 68,
+      "crowd_tier": "Moderate",
+      "historical_occupancy_rate_percent": 65,
+      "peak_reasons_or_festivals": "Post-monsoon clarity and cooling temperatures draw rising visitor numbers"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 650,
+        "max": 1300
+      },
+      "midrange_stay_per_night": {
+        "min": 2050,
+        "max": 4150
+      },
+      "luxury_resort_per_night": {
+        "min": 6100,
+        "max": 13200
+      },
+      "avg_daily_meal_cost": 560,
+      "avg_local_commute_per_day": 740
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Pleasant weather makes this an excellent window for elephant rides and fort exploration.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, excellent visibility",
+        "crowd": "High"
+      },
+      {
+        "name": "Hawa Mahal",
+        "status": "Open, comfortable crowds",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in October experiences clear, pleasant post-monsoon days with comfortable evenings with temperatures ranging between 19°C and 32°C. Tourism density is at a moderate, comfortable level with a crowd index of 68/100 and average hotel occupancy of 65%. Post-monsoon clarity and cooling temperatures draw rising visitor numbers. Budget stays average ₹650–₹1300 per night, mid-range hotels run ₹2050–₹4150, and luxury resorts ₹6100–₹13200, alongside daily meal costs near ₹560 and local commute of roughly ₹740 per day. Amber Fort is open, excellent visibility with high crowd levels, while Hawa Mahal remains open, comfortable crowds. Pleasant weather makes this an excellent window for elephant rides and fort exploration. This makes the period a balanced window suited to families and value-conscious travelers."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "November",
+    "month_num": 11,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 12,
+        "max": 27
+      },
+      "rainfall_level": "Low (Dry, cool)",
+      "weather_summary": "Cool, clear skies with excellent visibility for heritage sightseeing"
+    },
+    "crowd_analytics": {
+      "crowd_index": 80,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 78,
+      "peak_reasons_or_festivals": "Diwali travel surge and ideal weather push demand sharply upward"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 720,
+        "max": 1420
+      },
+      "midrange_stay_per_night": {
+        "min": 2200,
+        "max": 4400
+      },
+      "luxury_resort_per_night": {
+        "min": 6400,
+        "max": 13800
+      },
+      "avg_daily_meal_cost": 570,
+      "avg_local_commute_per_day": 750
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Diwali week sees fireworks and festive lighting citywide; book accommodation well in advance.",
+    "key_attractions_status": [
+      {
+        "name": "Hawa Mahal",
+        "status": "Open, busy",
+        "crowd": "High"
+      },
+      {
+        "name": "City Palace",
+        "status": "Open, illuminated for Diwali",
+        "crowd": "Moderate"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in November experiences cool, clear skies with excellent visibility for heritage sightseeing with temperatures ranging between 12°C and 27°C. Tourism density is at its peak with a crowd index of 80/100 and average hotel occupancy of 78%. Diwali travel surge and ideal weather push demand sharply upward. Budget stays average ₹720–₹1420 per night, mid-range hotels run ₹2200–₹4400, and luxury resorts ₹6400–₹13800, alongside daily meal costs near ₹570 and local commute of roughly ₹750 per day. Hawa Mahal is open, busy with high crowd levels, while City Palace remains open, illuminated for Diwali. Diwali week sees fireworks and festive lighting citywide; book accommodation well in advance. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  },
+  {
+    "destination_id": "jaipur_rajasthan",
+    "destination_name": "Jaipur",
+    "state": "Rajasthan",
+    "month": "December",
+    "month_num": 12,
+    "climate": {
+      "avg_temp_celsius": {
+        "min": 8,
+        "max": 23
+      },
+      "rainfall_level": "Low (Dry, cool)",
+      "weather_summary": "Cold, crisp winter air returns with clear skies through year-end"
+    },
+    "crowd_analytics": {
+      "crowd_index": 83,
+      "crowd_tier": "High",
+      "historical_occupancy_rate_percent": 80,
+      "peak_reasons_or_festivals": "Year-end travel and New Year celebrations keep demand at a seasonal high"
+    },
+    "budget_benchmarks_inr": {
+      "budget_stay_per_night": {
+        "min": 700,
+        "max": 1400
+      },
+      "midrange_stay_per_night": {
+        "min": 2200,
+        "max": 4450
+      },
+      "luxury_resort_per_night": {
+        "min": 6450,
+        "max": 14000
+      },
+      "avg_daily_meal_cost": 510,
+      "avg_local_commute_per_day": 700
+    },
+    "target_user_fit": {
+      "solo_backpackers": "High",
+      "budget_students": "High",
+      "families_with_kids": "High",
+      "elderly_accessibility": "Moderate"
+    },
+    "health_and_safety_advisory": "Book forts and heritage hotels early as the city fills up for New Year celebrations.",
+    "key_attractions_status": [
+      {
+        "name": "Amber Fort",
+        "status": "Open, very crowded",
+        "crowd": "High"
+      },
+      {
+        "name": "City Palace",
+        "status": "Open, busy",
+        "crowd": "High"
+      }
+    ],
+    "rag_chunk_text": "Jaipur in December experiences cold, crisp winter air returns with clear skies through year-end with temperatures ranging between 8°C and 23°C. Tourism density is at its peak with a crowd index of 83/100 and average hotel occupancy of 80%. Year-end travel and New Year celebrations keep demand at a seasonal high. Budget stays average ₹700–₹1400 per night, mid-range hotels run ₹2200–₹4450, and luxury resorts ₹6450–₹14000, alongside daily meal costs near ₹510 and local commute of roughly ₹700 per day. Amber Fort is open, very crowded with high crowd levels, while City Palace remains open, busy. Book forts and heritage hotels early as the city fills up for New Year celebrations. This makes the period best suited for social travelers and groups comfortable with crowds and premium pricing."
+  }
+]
